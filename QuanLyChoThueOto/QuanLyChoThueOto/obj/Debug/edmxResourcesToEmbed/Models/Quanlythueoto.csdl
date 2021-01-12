@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanlythueotoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BIENBANGN">
+    <Key>
+      <PropertyRef Name="Số_BBGN" />
+    </Key>
+    <Property Name="Số_BBGN" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngày_giao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Km_đi" Type="Int32" Nullable="false" />
+    <Property Name="Xăng_đi" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Trạng_thái_đi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngày_nhận" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Km_về" Type="Int32" Nullable="false" />
+    <Property Name="Xăng_về" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Trạng_thái_về" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_BIENBANGN_KHACHHANG" FromRole="BIENBANGN" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_BIENBANGN_NHANVIEN" FromRole="BIENBANGN" ToRole="NHANVIEN" />
+    <NavigationProperty Name="XE" Relationship="Self.FK_BIENBANGN_XE" FromRole="BIENBANGN" ToRole="XE" />
+  </EntityType>
+  <EntityType Name="HOPDONG">
+    <Key>
+      <PropertyRef Name="Số_HĐ" />
+    </Key>
+    <Property Name="Số_HĐ" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngày_HĐ" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Nội_dung_HĐ" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tiền_đặt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Khuyến_mãi" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Giấy_tờ_giữ_lại" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOPDONG_KHACHHANG" FromRole="HOPDONG" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_HOPDONG_NHANVIEN" FromRole="HOPDONG" ToRole="NHANVIEN" />
+    <NavigationProperty Name="XE" Relationship="Self.FK_HOPDONG_XE" FromRole="HOPDONG" ToRole="XE" />
+    <NavigationProperty Name="THANHTOANs" Relationship="Self.FK_THANHTOAN_HOPDONG" FromRole="HOPDONG" ToRole="THANHTOAN" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="Mã_KH" />
+    </Key>
+    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tên_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Địa_chỉ" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SĐT_KH" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CMTKH" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="GPLX" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BIENBANGNs" Relationship="Self.FK_BIENBANGN_KHACHHANG" FromRole="KHACHHANG" ToRole="BIENBANGN" />
+    <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_KHACHHANG" FromRole="KHACHHANG" ToRole="HOPDONG" />
+    <NavigationProperty Name="LICHCHOTHUEs" Relationship="Self.FK_LICHCHOTHUE_KHACHHANG" FromRole="KHACHHANG" ToRole="LICHCHOTHUE" />
+    <NavigationProperty Name="LICHTHUEs" Relationship="Self.FK_LICHTHUE_KHACHHANG" FromRole="KHACHHANG" ToRole="LICHTHUE" />
+    <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_KHACHHANG" FromRole="KHACHHANG" ToRole="SUCO" />
+  </EntityType>
+  <EntityType Name="LICHCHOTHUE">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="Int32" Nullable="false" />
+    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_loại" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngày_đăng_ký" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ngày_thuê" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Số_ngày_thuê" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_LICHCHOTHUE_KHACHHANG" FromRole="LICHCHOTHUE" ToRole="KHACHHANG" />
+    <NavigationProperty Name="LOAIXE" Relationship="Self.FK_LICHCHOTHUE_LOAIXE" FromRole="LICHCHOTHUE" ToRole="LOAIXE" />
+  </EntityType>
+  <EntityType Name="LOAIXE">
+    <Key>
+      <PropertyRef Name="Mã_loại" />
+    </Key>
+    <Property Name="Mã_loại" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tên_loại" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Số_lượng" Type="Int32" Nullable="false" />
+    <Property Name="Mô_tả" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="LICHCHOTHUEs" Relationship="Self.FK_LICHCHOTHUE_LOAIXE" FromRole="LOAIXE" ToRole="LICHCHOTHUE" />
+    <NavigationProperty Name="XEs" Relationship="Self.FK_XE_LOAIXE" FromRole="LOAIXE" ToRole="XE" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="Mã_NV" />
+    </Key>
+    <Property Name="Mã_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tên_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Vai_trò" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMTNV" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SĐT_NV" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BIENBANGNs" Relationship="Self.FK_BIENBANGN_NHANVIEN" FromRole="NHANVIEN" ToRole="BIENBANGN" />
+    <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_NHANVIEN" FromRole="NHANVIEN" ToRole="HOPDONG" />
+    <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_NHANVIEN" FromRole="NHANVIEN" ToRole="SUCO" />
+    <NavigationProperty Name="THANHTOANs" Relationship="Self.FK_THANHTOAN_NHANVIEN" FromRole="NHANVIEN" ToRole="THANHTOAN" />
+  </EntityType>
+  <EntityType Name="SUCO">
+    <Key>
+      <PropertyRef Name="Số_BBSC" />
+    </Key>
+    <Property Name="Số_BBSC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tên_SC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Ngày_BBSC" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Nội_dung_SC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tiền_phạt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_SUCO_KHACHHANG" FromRole="SUCO" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_SUCO_NHANVIEN" FromRole="SUCO" ToRole="NHANVIEN" />
+    <NavigationProperty Name="XE" Relationship="Self.FK_SUCO_XE" FromRole="SUCO" ToRole="XE" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="THANHTOAN">
+    <Key>
+      <PropertyRef Name="Số_HĐTT" />
+    </Key>
+    <Property Name="Số_HĐTT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Số_HĐ" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngày_thanh_toán" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Lý_do" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Hồ_sơ_kèm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tiền_TT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="HOPDONG" Relationship="Self.FK_THANHTOAN_HOPDONG" FromRole="THANHTOAN" ToRole="HOPDONG" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_THANHTOAN_NHANVIEN" FromRole="THANHTOAN" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="XE">
+    <Key>
+      <PropertyRef Name="Số_xe" />
+    </Key>
+    <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_loại" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Tên_xe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phí_xăng" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Phí_quá_km" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Đơn_giá" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mô_tả_tình_trạng" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Trạng_thái" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BIENBANGNs" Relationship="Self.FK_BIENBANGN_XE" FromRole="XE" ToRole="BIENBANGN" />
+    <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_XE" FromRole="XE" ToRole="HOPDONG" />
+    <NavigationProperty Name="LOAIXE" Relationship="Self.FK_XE_LOAIXE" FromRole="XE" ToRole="LOAIXE" />
+    <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_XE" FromRole="XE" ToRole="SUCO" />
+    <NavigationProperty Name="LICHTHUEs" Relationship="Self.FK_LICHTHUE_XE" FromRole="XE" ToRole="LICHTHUE" />
+  </EntityType>
+  <EntityType Name="LICHTHUE">
+    <Key>
+      <PropertyRef Name="Số_xe" />
+      <PropertyRef Name="Mã_KH" />
+      <PropertyRef Name="Ngày_giao" />
+      <PropertyRef Name="Ngày_trả" />
+      <PropertyRef Name="Ngày_giao_thực_tế" />
+      <PropertyRef Name="Gia_hạn" />
+    </Key>
+    <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngày_giao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ngày_trả" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ngày_giao_thực_tế" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Gia_hạn" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_LICHTHUE_KHACHHANG" FromRole="LICHTHUE" ToRole="KHACHHANG" />
+    <NavigationProperty Name="XE" Relationship="Self.FK_LICHTHUE_XE" FromRole="LICHTHUE" ToRole="XE" />
+  </EntityType>
+  <Association Name="FK_BIENBANGN_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="BIENBANGN" Type="Self.BIENBANGN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="Mã_KH" />
+      </Principal>
+      <Dependent Role="BIENBANGN">
+        <PropertyRef Name="Mã_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BIENBANGN_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="BIENBANGN" Type="Self.BIENBANGN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Mã_NV" />
+      </Principal>
+      <Dependent Role="BIENBANGN">
+        <PropertyRef Name="Mã_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BIENBANGN_XE">
+    <End Role="XE" Type="Self.XE" Multiplicity="1" />
+    <End Role="BIENBANGN" Type="Self.BIENBANGN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XE">
+        <PropertyRef Name="Số_xe" />
+      </Principal>
+      <Dependent Role="BIENBANGN">
+        <PropertyRef Name="Số_xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOPDONG_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="Mã_KH" />
+      </Principal>
+      <Dependent Role="HOPDONG">
+        <PropertyRef Name="Mã_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOPDONG_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Mã_NV" />
+      </Principal>
+      <Dependent Role="HOPDONG">
+        <PropertyRef Name="Mã_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOPDONG_XE">
+    <End Role="XE" Type="Self.XE" Multiplicity="1" />
+    <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XE">
+        <PropertyRef Name="Số_xe" />
+      </Principal>
+      <Dependent Role="HOPDONG">
+        <PropertyRef Name="Số_xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_THANHTOAN_HOPDONG">
+    <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="1" />
+    <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOPDONG">
+        <PropertyRef Name="Số_HĐ" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="Số_HĐ" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICHCHOTHUE_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="Mã_KH" />
+      </Principal>
+      <Dependent Role="LICHCHOTHUE">
+        <PropertyRef Name="Mã_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICHTHUE_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="Mã_KH" />
+      </Principal>
+      <Dependent Role="LICHTHUE">
+        <PropertyRef Name="Mã_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUCO_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="Mã_KH" />
+      </Principal>
+      <Dependent Role="SUCO">
+        <PropertyRef Name="Mã_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICHCHOTHUE_LOAIXE">
+    <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
+    <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIXE">
+        <PropertyRef Name="Mã_loại" />
+      </Principal>
+      <Dependent Role="LICHCHOTHUE">
+        <PropertyRef Name="Mã_loại" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XE_LOAIXE">
+    <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
+    <End Role="XE" Type="Self.XE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIXE">
+        <PropertyRef Name="Mã_loại" />
+      </Principal>
+      <Dependent Role="XE">
+        <PropertyRef Name="Mã_loại" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUCO_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Mã_NV" />
+      </Principal>
+      <Dependent Role="SUCO">
+        <PropertyRef Name="Mã_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_THANHTOAN_NHANVIEN">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="Mã_NV" />
+      </Principal>
+      <Dependent Role="THANHTOAN">
+        <PropertyRef Name="Mã_NV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SUCO_XE">
+    <End Role="XE" Type="Self.XE" Multiplicity="1" />
+    <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XE">
+        <PropertyRef Name="Số_xe" />
+      </Principal>
+      <Dependent Role="SUCO">
+        <PropertyRef Name="Số_xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LICHTHUE_XE">
+    <End Role="XE" Type="Self.XE" Multiplicity="1" />
+    <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XE">
+        <PropertyRef Name="Số_xe" />
+      </Principal>
+      <Dependent Role="LICHTHUE">
+        <PropertyRef Name="Số_xe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanlythueotoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BIENBANGNs" EntityType="Self.BIENBANGN" />
+    <EntitySet Name="HOPDONGs" EntityType="Self.HOPDONG" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="LICHCHOTHUEs" EntityType="Self.LICHCHOTHUE" />
+    <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="SUCOes" EntityType="Self.SUCO" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="THANHTOANs" EntityType="Self.THANHTOAN" />
+    <EntitySet Name="XEs" EntityType="Self.XE" />
+    <EntitySet Name="LICHTHUEs" EntityType="Self.LICHTHUE" />
+    <AssociationSet Name="FK_BIENBANGN_KHACHHANG" Association="Self.FK_BIENBANGN_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="BIENBANGN" EntitySet="BIENBANGNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BIENBANGN_NHANVIEN" Association="Self.FK_BIENBANGN_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="BIENBANGN" EntitySet="BIENBANGNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BIENBANGN_XE" Association="Self.FK_BIENBANGN_XE">
+      <End Role="XE" EntitySet="XEs" />
+      <End Role="BIENBANGN" EntitySet="BIENBANGNs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOPDONG_KHACHHANG" Association="Self.FK_HOPDONG_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="HOPDONG" EntitySet="HOPDONGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOPDONG_NHANVIEN" Association="Self.FK_HOPDONG_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOPDONG" EntitySet="HOPDONGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOPDONG_XE" Association="Self.FK_HOPDONG_XE">
+      <End Role="XE" EntitySet="XEs" />
+      <End Role="HOPDONG" EntitySet="HOPDONGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THANHTOAN_HOPDONG" Association="Self.FK_THANHTOAN_HOPDONG">
+      <End Role="HOPDONG" EntitySet="HOPDONGs" />
+      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICHCHOTHUE_KHACHHANG" Association="Self.FK_LICHCHOTHUE_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICHTHUE_KHACHHANG" Association="Self.FK_LICHTHUE_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="LICHTHUE" EntitySet="LICHTHUEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUCO_KHACHHANG" Association="Self.FK_SUCO_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="SUCO" EntitySet="SUCOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICHCHOTHUE_LOAIXE" Association="Self.FK_LICHCHOTHUE_LOAIXE">
+      <End Role="LOAIXE" EntitySet="LOAIXEs" />
+      <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XE_LOAIXE" Association="Self.FK_XE_LOAIXE">
+      <End Role="LOAIXE" EntitySet="LOAIXEs" />
+      <End Role="XE" EntitySet="XEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUCO_NHANVIEN" Association="Self.FK_SUCO_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="SUCO" EntitySet="SUCOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_THANHTOAN_NHANVIEN" Association="Self.FK_THANHTOAN_NHANVIEN">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="THANHTOAN" EntitySet="THANHTOANs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SUCO_XE" Association="Self.FK_SUCO_XE">
+      <End Role="XE" EntitySet="XEs" />
+      <End Role="SUCO" EntitySet="SUCOes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LICHTHUE_XE" Association="Self.FK_LICHTHUE_XE">
+      <End Role="XE" EntitySet="XEs" />
+      <End Role="LICHTHUE" EntitySet="LICHTHUEs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

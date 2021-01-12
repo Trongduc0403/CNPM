@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanlythueotoModelStoreContainer" CdmEntityContainer="QuanlythueotoEntities">
+    <EntitySetMapping Name="BIENBANGNs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.BIENBANGN">
+        <MappingFragment StoreEntitySet="BIENBANGN">
+          <ScalarProperty Name="Số_BBGN" ColumnName="Số BBGN" />
+          <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
+          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
+          <ScalarProperty Name="Mã_NV" ColumnName="Mã NV" />
+          <ScalarProperty Name="Ngày_giao" ColumnName="Ngày giao" />
+          <ScalarProperty Name="Km_đi" ColumnName="Km đi" />
+          <ScalarProperty Name="Xăng_đi" ColumnName="Xăng đi" />
+          <ScalarProperty Name="Trạng_thái_đi" ColumnName="Trạng thái đi" />
+          <ScalarProperty Name="Ngày_nhận" ColumnName="Ngày nhận" />
+          <ScalarProperty Name="Km_về" ColumnName="Km về" />
+          <ScalarProperty Name="Xăng_về" ColumnName="Xăng về" />
+          <ScalarProperty Name="Trạng_thái_về" ColumnName="Trạng thái về" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HOPDONGs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.HOPDONG">
+        <MappingFragment StoreEntitySet="HOPDONG">
+          <ScalarProperty Name="Số_HĐ" ColumnName="Số HĐ" />
+          <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
+          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
+          <ScalarProperty Name="Mã_NV" ColumnName="Mã NV" />
+          <ScalarProperty Name="Ngày_HĐ" ColumnName="Ngày HĐ" />
+          <ScalarProperty Name="Nội_dung_HĐ" ColumnName="Nội dung HĐ" />
+          <ScalarProperty Name="Tiền_đặt" ColumnName="Tiền đặt" />
+          <ScalarProperty Name="Khuyến_mãi" ColumnName="Khuyến mãi" />
+          <ScalarProperty Name="Giấy_tờ_giữ_lại" ColumnName="Giấy tờ giữ lại" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
+          <ScalarProperty Name="Tên_KH" ColumnName="Tên KH" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="SĐT_KH" ColumnName="SĐT KH" />
+          <ScalarProperty Name="CMTKH" ColumnName="CMTKH" />
+          <ScalarProperty Name="GPLX" ColumnName="GPLX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICHCHOTHUEs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.LICHCHOTHUE">
+        <MappingFragment StoreEntitySet="LICHCHOTHUE">
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
+          <ScalarProperty Name="Mã_loại" ColumnName="Mã loại" />
+          <ScalarProperty Name="Ngày_đăng_ký" ColumnName="Ngày đăng ký" />
+          <ScalarProperty Name="Ngày_thuê" ColumnName="Ngày thuê" />
+          <ScalarProperty Name="Số_ngày_thuê" ColumnName="Số ngày thuê" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAIXEs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.LOAIXE">
+        <MappingFragment StoreEntitySet="LOAIXE">
+          <ScalarProperty Name="Mã_loại" ColumnName="Mã loại" />
+          <ScalarProperty Name="Tên_loại" ColumnName="Tên loại" />
+          <ScalarProperty Name="Số_lượng" ColumnName="Số lượng" />
+          <ScalarProperty Name="Mô_tả" ColumnName="Mô tả" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="Mã_NV" ColumnName="Mã NV" />
+          <ScalarProperty Name="Tên_NV" ColumnName="Tên NV" />
+          <ScalarProperty Name="Vai_trò" ColumnName="Vai trò" />
+          <ScalarProperty Name="CMTNV" ColumnName="CMTNV" />
+          <ScalarProperty Name="SĐT_NV" ColumnName="SĐT NV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUCOes">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.SUCO">
+        <MappingFragment StoreEntitySet="SUCO">
+          <ScalarProperty Name="Số_BBSC" ColumnName="Số BBSC" />
+          <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
+          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
+          <ScalarProperty Name="Tên_SC" ColumnName="Tên SC" />
+          <ScalarProperty Name="Ngày_BBSC" ColumnName="Ngày BBSC" />
+          <ScalarProperty Name="Nội_dung_SC" ColumnName="Nội dung SC" />
+          <ScalarProperty Name="Tiền_phạt" ColumnName="Tiền phạt" />
+          <ScalarProperty Name="Mã_NV" ColumnName="Mã NV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THANHTOANs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.THANHTOAN">
+        <MappingFragment StoreEntitySet="THANHTOAN">
+          <ScalarProperty Name="Số_HĐTT" ColumnName="Số HĐTT" />
+          <ScalarProperty Name="Số_HĐ" ColumnName="Số HĐ" />
+          <ScalarProperty Name="Mã_NV" ColumnName="Mã NV" />
+          <ScalarProperty Name="Ngày_thanh_toán" ColumnName="Ngày thanh toán" />
+          <ScalarProperty Name="Lý_do" ColumnName="Lý do" />
+          <ScalarProperty Name="Hồ_sơ_kèm" ColumnName="Hồ sơ kèm" />
+          <ScalarProperty Name="Tiền_TT" ColumnName="Tiền TT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XEs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.XE">
+        <MappingFragment StoreEntitySet="XE">
+          <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
+          <ScalarProperty Name="Mã_loại" ColumnName="Mã loại" />
+          <ScalarProperty Name="Tên_xe" ColumnName="Tên xe" />
+          <ScalarProperty Name="Phí_xăng" ColumnName="Phí xăng" />
+          <ScalarProperty Name="Phí_quá_km" ColumnName="Phí quá km" />
+          <ScalarProperty Name="Đơn_giá" ColumnName="Đơn giá" />
+          <ScalarProperty Name="Mô_tả_tình_trạng" ColumnName="Mô tả tình trạng" />
+          <ScalarProperty Name="Trạng_thái" ColumnName="Trạng thái" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICHTHUEs">
+      <EntityTypeMapping TypeName="QuanlythueotoModel.LICHTHUE">
+        <MappingFragment StoreEntitySet="LICHTHUE">
+          <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
+          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
+          <ScalarProperty Name="Ngày_giao" ColumnName="Ngày giao" />
+          <ScalarProperty Name="Ngày_trả" ColumnName="Ngày trả" />
+          <ScalarProperty Name="Ngày_giao_thực_tế" ColumnName="Ngày giao thực tế" />
+          <ScalarProperty Name="Gia_hạn" ColumnName="Gia hạn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
