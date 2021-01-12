@@ -24,7 +24,7 @@ namespace QuanLyChoThueOto
         private void skin()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            themes.LookAndFeel.SkinName = "DevExpress Dark Style";
+            themes.LookAndFeel.SkinName = "DevExpress Style";
         }
 
         private void ManHinhChinh_Load(object sender, EventArgs e)

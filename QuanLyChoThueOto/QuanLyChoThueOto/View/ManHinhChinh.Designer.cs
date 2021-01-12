@@ -76,13 +76,13 @@ namespace QuanLyChoThueOto
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.tabHien = new DevExpress.XtraTab.XtraTabControl();
+            this.tabHienThi = new DevExpress.XtraTab.XtraTabControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             btKhachHang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabHien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabHienThi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -469,13 +469,13 @@ namespace QuanLyChoThueOto
             // 
             this.ribbonPage6.Name = "ribbonPage6";
             // 
-            // tabHien
+            // tabHienThi
             // 
-            this.tabHien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabHien.Location = new System.Drawing.Point(0, 150);
-            this.tabHien.Name = "tabHien";
-            this.tabHien.Size = new System.Drawing.Size(994, 444);
-            this.tabHien.TabIndex = 2;
+            this.tabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabHienThi.Location = new System.Drawing.Point(0, 150);
+            this.tabHienThi.Name = "tabHienThi";
+            this.tabHienThi.Size = new System.Drawing.Size(994, 444);
+            this.tabHienThi.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -494,7 +494,7 @@ namespace QuanLyChoThueOto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 621);
-            this.Controls.Add(this.tabHien);
+            this.Controls.Add(this.tabHienThi);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "ManHinhChinh";
@@ -505,7 +505,7 @@ namespace QuanLyChoThueOto
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabHien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabHienThi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -554,7 +554,7 @@ namespace QuanLyChoThueOto
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.BarButtonItem btXeRanh;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        private DevExpress.XtraTab.XtraTabControl tabHien;
+        private DevExpress.XtraTab.XtraTabControl tabHienThi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
         private DevExpress.Utils.WorkspaceManager workspaceManager1;

@@ -24,7 +24,7 @@ namespace QuanLyChoThueOto.Models
         public string Số_xe { get; set; }
         public string Mã_KH { get; set; }
         public string Mã_NV { get; set; }
-        public System.DateTime Ngày_HĐ { get; set; }
+        public Nullable<System.DateTime> Ngày_HĐ { get; set; }
         public string Nội_dung_HĐ { get; set; }
         public string Tiền_đặt { get; set; }
         public string Khuyến_mãi { get; set; }

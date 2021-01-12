@@ -1,14 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 
 namespace QuanLyChoThueOto
@@ -59,11 +51,16 @@ namespace QuanLyChoThueOto
         private void skin()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            themes.LookAndFeel.SkinName = "DevExpress Dark Style";
+            themes.LookAndFeel.SkinName = "DevExpress Style";
         }
         private void DangNhap_Load(object sender, EventArgs e)
         {
             skin();
+        }
+
+        private void txtTaiKhoan_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

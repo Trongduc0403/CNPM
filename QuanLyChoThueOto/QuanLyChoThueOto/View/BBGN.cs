@@ -24,10 +24,6 @@ namespace QuanLyChoThueOto
 
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            ChiTietBBGN f = new ChiTietBBGN();
-            f.Show();
-        }
+
     }
 }

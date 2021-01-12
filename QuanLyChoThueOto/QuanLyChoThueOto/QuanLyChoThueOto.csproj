@@ -78,47 +78,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\HopDongController.cs" />
     <Compile Include="Models\BIENBANGN.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBQuanlythueoto.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBQuanlythueoto.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBQuanlythueoto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBQuanlythueoto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBQuanlythueoto.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\HOPDONG.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHACHHANG.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LOAIXE.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NHANVIEN.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quanlythueoto.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quanlythueoto.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quanlythueoto.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quanlythueoto.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quanlythueoto.edmx</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SUCO.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\THANHTOAN.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\XE.cs">
-      <DependentUpon>Quanlythueoto.tt</DependentUpon>
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="View\BBGN.cs">
       <SubType>Form</SubType>
@@ -249,12 +250,12 @@
     <EmbeddedResource Include="View\ThongTinKH.resx">
       <DependentUpon>ThongTinKH.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Models\Quanlythueoto.edmx">
+    <EntityDeploy Include="Models\DBQuanlythueoto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Quanlythueoto.Designer.cs</LastGenOutput>
+      <LastGenOutput>DBQuanlythueoto.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\Quanlythueoto.edmx.diagram">
-      <DependentUpon>Quanlythueoto.edmx</DependentUpon>
+    <None Include="Models\DBQuanlythueoto.edmx.diagram">
+      <DependentUpon>DBQuanlythueoto.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -274,18 +275,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\Quanlythueoto.Context.tt">
+    <Content Include="Models\DBQuanlythueoto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Quanlythueoto.edmx</DependentUpon>
-      <LastGenOutput>Quanlythueoto.Context.cs</LastGenOutput>
+      <DependentUpon>DBQuanlythueoto.edmx</DependentUpon>
+      <LastGenOutput>DBQuanlythueoto.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Quanlythueoto.tt">
+    <Content Include="Models\DBQuanlythueoto.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Quanlythueoto.edmx</DependentUpon>
-      <LastGenOutput>Quanlythueoto.cs</LastGenOutput>
+      <DependentUpon>DBQuanlythueoto.edmx</DependentUpon>
+      <LastGenOutput>DBQuanlythueoto.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

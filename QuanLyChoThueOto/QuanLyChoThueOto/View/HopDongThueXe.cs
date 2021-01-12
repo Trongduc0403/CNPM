@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyChoThueOto.Models;
+using QuanLyChoThueOto.Controller;
 
 namespace QuanLyChoThueOto
 {
@@ -23,10 +25,32 @@ namespace QuanLyChoThueOto
 
         }
 
-        private void simpleButton4_Click(object sender, EventArgs e)
+
+
+
+
+        private void btThoat_Click(object sender, EventArgs e)
         {
-            CapNhatThongTinHD f = new CapNhatThongTinHD();
-            f.Show();
+            Close();
+        }
+
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            HOPDONG hopdong = new HOPDONG();
+            hopdong.Số_HĐ = txtSoDH.Text.ToString();
+            hopdong.Số_xe = cbbSoXe.Text.ToString();
+            hopdong.Mã_KH = txtMaKH.Text.ToString();
+            //hopdong.Ngày_HĐ = DateTime.Parse(msktbNgayHD.Text);
+            hopdong.Nội_dung_HĐ = this.txtNoiDungHD.Text.ToString();
+            hopdong.Tiền_đặt = this.txtTienDat.Text.ToString();
+            hopdong.Khuyến_mãi = this.txtKhuyenMai.Text.ToString();
+            hopdong.Giấy_tờ_giữ_lại = this.txtGiayTo.Text.ToString();
+            if(HopDongController.AddHopDong(hopdong))
+            {
+                MessageBox.Show("ok");
+            }
+            MessageBox.Show("Fail");
+
         }
     }
 }
