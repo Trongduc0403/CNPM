@@ -17,7 +17,6 @@ namespace QuanLyChoThueOto.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAIXE()
         {
-            this.LICHCHOTHUEs = new HashSet<LICHCHOTHUE>();
             this.XEs = new HashSet<XE>();
         }
     
@@ -26,8 +25,6 @@ namespace QuanLyChoThueOto.Models
         public int Số_lượng { get; set; }
         public string Mô_tả { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHCHOTHUE> LICHCHOTHUEs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<XE> XEs { get; set; }
     }

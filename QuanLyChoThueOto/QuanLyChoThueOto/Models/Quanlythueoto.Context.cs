@@ -28,13 +28,11 @@ namespace QuanLyChoThueOto.Models
         public virtual DbSet<BIENBANGN> BIENBANGNs { get; set; }
         public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
-        public virtual DbSet<LICHCHOTHUE> LICHCHOTHUEs { get; set; }
         public virtual DbSet<LOAIXE> LOAIXEs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<SUCO> SUCOes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
         public virtual DbSet<XE> XEs { get; set; }
-        public virtual DbSet<LICHTHUE> LICHTHUEs { get; set; }
     }
 }

@@ -32,14 +32,13 @@ namespace QuanLyChoThueOto
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.BarButtonItem btKhachHang;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManHinhChinh));
-            DevExpress.Utils.Animation.PushTransition pushTransition2 = new DevExpress.Utils.Animation.PushTransition();
+            DevExpress.Utils.Animation.PushTransition pushTransition1 = new DevExpress.Utils.Animation.PushTransition();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.btNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.btDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btPhucHoi = new DevExpress.XtraBars.BarButtonItem();
-            this.btDangKyThue = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btBBGiaoNhan = new DevExpress.XtraBars.BarButtonItem();
             this.btSuCo = new DevExpress.XtraBars.BarButtonItem();
@@ -55,6 +54,7 @@ namespace QuanLyChoThueOto
             this.btXeSua = new DevExpress.XtraBars.BarButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barWorkspaceMenuItem1 = new DevExpress.XtraBars.BarWorkspaceMenuItem();
+            this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             this.btXeRanh = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -78,13 +78,11 @@ namespace QuanLyChoThueOto
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabHien = new DevExpress.XtraTab.XtraTabControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.workspaceManager1 = new DevExpress.Utils.WorkspaceManager(this.components);
             btKhachHang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabHien)).BeginInit();
-            this.tabHien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +107,6 @@ namespace QuanLyChoThueOto
             this.btDoiMatKhau,
             this.btSaoLuu,
             this.btPhucHoi,
-            this.btDangKyThue,
             this.barButtonItem8,
             this.btBBGiaoNhan,
             this.btSuCo,
@@ -190,15 +187,6 @@ namespace QuanLyChoThueOto
             this.btPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btPhucHoi.ImageOptions.Image")));
             this.btPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btPhucHoi.ImageOptions.LargeImage")));
             this.btPhucHoi.Name = "btPhucHoi";
-            // 
-            // btDangKyThue
-            // 
-            this.btDangKyThue.Caption = "Đăng ký thuê";
-            this.btDangKyThue.Id = 7;
-            this.btDangKyThue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btDangKyThue.ImageOptions.Image")));
-            this.btDangKyThue.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btDangKyThue.ImageOptions.LargeImage")));
-            this.btDangKyThue.Name = "btDangKyThue";
-            this.btDangKyThue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDangKyThue_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -319,6 +307,11 @@ namespace QuanLyChoThueOto
             this.barWorkspaceMenuItem1.Name = "barWorkspaceMenuItem1";
             this.barWorkspaceMenuItem1.WorkspaceManager = this.workspaceManager1;
             // 
+            // workspaceManager1
+            // 
+            this.workspaceManager1.TargetControl = this;
+            this.workspaceManager1.TransitionType = pushTransition1;
+            // 
             // btXeRanh
             // 
             this.btXeRanh.Caption = "Xe rảnh";
@@ -390,7 +383,6 @@ namespace QuanLyChoThueOto
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.ItemLinks.Add(this.btDangKyThue);
             this.ribbonPageGroup2.ItemLinks.Add(this.btHopDong);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Danh mục hợp đồng";
@@ -495,11 +487,6 @@ namespace QuanLyChoThueOto
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // workspaceManager1
-            // 
-            this.workspaceManager1.TargetControl = this;
-            this.workspaceManager1.TransitionType = pushTransition2;
-            // 
             // ManHinhChinh
             // 
             this.Appearance.BackColor = System.Drawing.Color.Honeydew;
@@ -519,7 +506,6 @@ namespace QuanLyChoThueOto
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabHien)).EndInit();
-            this.tabHien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -543,7 +529,6 @@ namespace QuanLyChoThueOto
         private DevExpress.XtraBars.BarButtonItem btSaoLuu;
         private DevExpress.XtraBars.BarButtonItem btPhucHoi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.BarButtonItem btDangKyThue;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem btBBGiaoNhan;
         private DevExpress.XtraBars.BarButtonItem btSuCo;

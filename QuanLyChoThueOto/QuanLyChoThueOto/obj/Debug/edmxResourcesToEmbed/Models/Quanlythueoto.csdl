@@ -50,22 +50,7 @@
     <Property Name="GPLX" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
     <NavigationProperty Name="BIENBANGNs" Relationship="Self.FK_BIENBANGN_KHACHHANG" FromRole="KHACHHANG" ToRole="BIENBANGN" />
     <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_KHACHHANG" FromRole="KHACHHANG" ToRole="HOPDONG" />
-    <NavigationProperty Name="LICHCHOTHUEs" Relationship="Self.FK_LICHCHOTHUE_KHACHHANG" FromRole="KHACHHANG" ToRole="LICHCHOTHUE" />
-    <NavigationProperty Name="LICHTHUEs" Relationship="Self.FK_LICHTHUE_KHACHHANG" FromRole="KHACHHANG" ToRole="LICHTHUE" />
     <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_KHACHHANG" FromRole="KHACHHANG" ToRole="SUCO" />
-  </EntityType>
-  <EntityType Name="LICHCHOTHUE">
-    <Key>
-      <PropertyRef Name="STT" />
-    </Key>
-    <Property Name="STT" Type="Int32" Nullable="false" />
-    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="Mã_loại" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="Ngày_đăng_ký" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Ngày_thuê" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Số_ngày_thuê" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_LICHCHOTHUE_KHACHHANG" FromRole="LICHCHOTHUE" ToRole="KHACHHANG" />
-    <NavigationProperty Name="LOAIXE" Relationship="Self.FK_LICHCHOTHUE_LOAIXE" FromRole="LICHCHOTHUE" ToRole="LOAIXE" />
   </EntityType>
   <EntityType Name="LOAIXE">
     <Key>
@@ -75,7 +60,6 @@
     <Property Name="Tên_loại" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Số_lượng" Type="Int32" Nullable="false" />
     <Property Name="Mô_tả" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="LICHCHOTHUEs" Relationship="Self.FK_LICHCHOTHUE_LOAIXE" FromRole="LOAIXE" ToRole="LICHCHOTHUE" />
     <NavigationProperty Name="XEs" Relationship="Self.FK_XE_LOAIXE" FromRole="LOAIXE" ToRole="XE" />
   </EntityType>
   <EntityType Name="NHANVIEN">
@@ -148,25 +132,6 @@
     <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_XE" FromRole="XE" ToRole="HOPDONG" />
     <NavigationProperty Name="LOAIXE" Relationship="Self.FK_XE_LOAIXE" FromRole="XE" ToRole="LOAIXE" />
     <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_XE" FromRole="XE" ToRole="SUCO" />
-    <NavigationProperty Name="LICHTHUEs" Relationship="Self.FK_LICHTHUE_XE" FromRole="XE" ToRole="LICHTHUE" />
-  </EntityType>
-  <EntityType Name="LICHTHUE">
-    <Key>
-      <PropertyRef Name="Số_xe" />
-      <PropertyRef Name="Mã_KH" />
-      <PropertyRef Name="Ngày_giao" />
-      <PropertyRef Name="Ngày_trả" />
-      <PropertyRef Name="Ngày_giao_thực_tế" />
-      <PropertyRef Name="Gia_hạn" />
-    </Key>
-    <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="Ngày_giao" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Ngày_trả" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Ngày_giao_thực_tế" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Gia_hạn" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_LICHTHUE_KHACHHANG" FromRole="LICHTHUE" ToRole="KHACHHANG" />
-    <NavigationProperty Name="XE" Relationship="Self.FK_LICHTHUE_XE" FromRole="LICHTHUE" ToRole="XE" />
   </EntityType>
   <Association Name="FK_BIENBANGN_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
@@ -252,30 +217,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_LICHCHOTHUE_KHACHHANG">
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-    <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACHHANG">
-        <PropertyRef Name="Mã_KH" />
-      </Principal>
-      <Dependent Role="LICHCHOTHUE">
-        <PropertyRef Name="Mã_KH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_LICHTHUE_KHACHHANG">
-    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-    <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHACHHANG">
-        <PropertyRef Name="Mã_KH" />
-      </Principal>
-      <Dependent Role="LICHTHUE">
-        <PropertyRef Name="Mã_KH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_SUCO_KHACHHANG">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
@@ -285,18 +226,6 @@
       </Principal>
       <Dependent Role="SUCO">
         <PropertyRef Name="Mã_KH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_LICHCHOTHUE_LOAIXE">
-    <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
-    <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="LOAIXE">
-        <PropertyRef Name="Mã_loại" />
-      </Principal>
-      <Dependent Role="LICHCHOTHUE">
-        <PropertyRef Name="Mã_loại" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -348,30 +277,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_LICHTHUE_XE">
-    <End Role="XE" Type="Self.XE" Multiplicity="1" />
-    <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="XE">
-        <PropertyRef Name="Số_xe" />
-      </Principal>
-      <Dependent Role="LICHTHUE">
-        <PropertyRef Name="Số_xe" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="QuanlythueotoEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BIENBANGNs" EntityType="Self.BIENBANGN" />
     <EntitySet Name="HOPDONGs" EntityType="Self.HOPDONG" />
     <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
-    <EntitySet Name="LICHCHOTHUEs" EntityType="Self.LICHCHOTHUE" />
     <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
     <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
     <EntitySet Name="SUCOes" EntityType="Self.SUCO" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="THANHTOANs" EntityType="Self.THANHTOAN" />
     <EntitySet Name="XEs" EntityType="Self.XE" />
-    <EntitySet Name="LICHTHUEs" EntityType="Self.LICHTHUE" />
     <AssociationSet Name="FK_BIENBANGN_KHACHHANG" Association="Self.FK_BIENBANGN_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
       <End Role="BIENBANGN" EntitySet="BIENBANGNs" />
@@ -400,21 +315,9 @@
       <End Role="HOPDONG" EntitySet="HOPDONGs" />
       <End Role="THANHTOAN" EntitySet="THANHTOANs" />
     </AssociationSet>
-    <AssociationSet Name="FK_LICHCHOTHUE_KHACHHANG" Association="Self.FK_LICHCHOTHUE_KHACHHANG">
-      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-      <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUEs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LICHTHUE_KHACHHANG" Association="Self.FK_LICHTHUE_KHACHHANG">
-      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-      <End Role="LICHTHUE" EntitySet="LICHTHUEs" />
-    </AssociationSet>
     <AssociationSet Name="FK_SUCO_KHACHHANG" Association="Self.FK_SUCO_KHACHHANG">
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
       <End Role="SUCO" EntitySet="SUCOes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LICHCHOTHUE_LOAIXE" Association="Self.FK_LICHCHOTHUE_LOAIXE">
-      <End Role="LOAIXE" EntitySet="LOAIXEs" />
-      <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUEs" />
     </AssociationSet>
     <AssociationSet Name="FK_XE_LOAIXE" Association="Self.FK_XE_LOAIXE">
       <End Role="LOAIXE" EntitySet="LOAIXEs" />
@@ -431,10 +334,6 @@
     <AssociationSet Name="FK_SUCO_XE" Association="Self.FK_SUCO_XE">
       <End Role="XE" EntitySet="XEs" />
       <End Role="SUCO" EntitySet="SUCOes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LICHTHUE_XE" Association="Self.FK_LICHTHUE_XE">
-      <End Role="XE" EntitySet="XEs" />
-      <End Role="LICHTHUE" EntitySet="LICHTHUEs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

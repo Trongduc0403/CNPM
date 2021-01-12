@@ -47,35 +47,6 @@
           <Property Name="CMTKH" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="GPLX" Type="char" MaxLength="12" Nullable="false" />
         </EntityType>
-        <EntityType Name="LICHCHOTHUE">
-          <Key>
-            <PropertyRef Name="STT" />
-          </Key>
-          <Property Name="STT" Type="int" Nullable="false" />
-          <Property Name="Mã KH" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="Mã loại" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="Ngày đăng ký" Type="datetime" Nullable="false" />
-          <Property Name="Ngày thuê" Type="datetime" Nullable="false" />
-          <Property Name="Số ngày thuê" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="LICHTHUE">
-          <Key>
-            <PropertyRef Name="Số xe" />
-            <PropertyRef Name="Mã KH" />
-            <PropertyRef Name="Ngày giao" />
-            <PropertyRef Name="Ngày trả" />
-            <PropertyRef Name="Ngày giao thực tế" />
-            <PropertyRef Name="Gia hạn" />
-          </Key>
-          <Property Name="Số xe" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="Mã KH" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="Ngày giao" Type="datetime" Nullable="false" />
-          <Property Name="Ngày trả" Type="datetime" Nullable="false" />
-          <Property Name="Ngày giao thực tế" Type="datetime" Nullable="false" />
-          <Property Name="Gia hạn" Type="datetime" Nullable="false" />
-        </EntityType>
         <EntityType Name="LOAIXE">
           <Key>
             <PropertyRef Name="Mã loại" />
@@ -215,54 +186,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LICHCHOTHUE_KHACHHANG">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-          <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHACHHANG">
-              <PropertyRef Name="Mã KH" />
-            </Principal>
-            <Dependent Role="LICHCHOTHUE">
-              <PropertyRef Name="Mã KH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LICHCHOTHUE_LOAIXE">
-          <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
-          <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOAIXE">
-              <PropertyRef Name="Mã loại" />
-            </Principal>
-            <Dependent Role="LICHCHOTHUE">
-              <PropertyRef Name="Mã loại" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LICHTHUE_KHACHHANG">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-          <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHACHHANG">
-              <PropertyRef Name="Mã KH" />
-            </Principal>
-            <Dependent Role="LICHTHUE">
-              <PropertyRef Name="Mã KH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LICHTHUE_XE">
-          <End Role="XE" Type="Self.XE" Multiplicity="1" />
-          <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="XE">
-              <PropertyRef Name="Số xe" />
-            </Principal>
-            <Dependent Role="LICHTHUE">
-              <PropertyRef Name="Số xe" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SUCO_KHACHHANG">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
@@ -339,23 +262,12 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
           <EntitySet Name="BIENBANGN" EntityType="Self.BIENBANGN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LICHCHOTHUE" EntityType="Self.LICHCHOTHUE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAIXE" EntityType="Self.LOAIXE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUCO" EntityType="Self.SUCO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XE" EntityType="Self.XE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LICHTHUE" EntityType="Self.LICHTHUE" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [LICHTHUE].[Số xe] AS [Số xe], 
-    [LICHTHUE].[Mã KH] AS [Mã KH], 
-    [LICHTHUE].[Ngày giao] AS [Ngày giao], 
-    [LICHTHUE].[Ngày trả] AS [Ngày trả], 
-    [LICHTHUE].[Ngày giao thực tế] AS [Ngày giao thực tế], 
-    [LICHTHUE].[Gia hạn] AS [Gia hạn]
-    FROM [dbo].[LICHTHUE] AS [LICHTHUE]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_BIENBANGN_KHACHHANG" Association="Self.FK_BIENBANGN_KHACHHANG">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
             <End Role="BIENBANGN" EntitySet="BIENBANGN" />
@@ -379,22 +291,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
           <AssociationSet Name="FK_HOPDONG_XE" Association="Self.FK_HOPDONG_XE">
             <End Role="XE" EntitySet="XE" />
             <End Role="HOPDONG" EntitySet="HOPDONG" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHCHOTHUE_KHACHHANG" Association="Self.FK_LICHCHOTHUE_KHACHHANG">
-            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-            <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHCHOTHUE_LOAIXE" Association="Self.FK_LICHCHOTHUE_LOAIXE">
-            <End Role="LOAIXE" EntitySet="LOAIXE" />
-            <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHTHUE_KHACHHANG" Association="Self.FK_LICHTHUE_KHACHHANG">
-            <End Role="KHACHHANG" EntitySet="KHACHHANG" />
-            <End Role="LICHTHUE" EntitySet="LICHTHUE" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHTHUE_XE" Association="Self.FK_LICHTHUE_XE">
-            <End Role="XE" EntitySet="XE" />
-            <End Role="LICHTHUE" EntitySet="LICHTHUE" />
           </AssociationSet>
           <AssociationSet Name="FK_SUCO_KHACHHANG" Association="Self.FK_SUCO_KHACHHANG">
             <End Role="KHACHHANG" EntitySet="KHACHHANG" />
@@ -476,22 +372,7 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
           <Property Name="GPLX" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="BIENBANGNs" Relationship="Self.FK_BIENBANGN_KHACHHANG" FromRole="KHACHHANG" ToRole="BIENBANGN" />
           <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_KHACHHANG" FromRole="KHACHHANG" ToRole="HOPDONG" />
-          <NavigationProperty Name="LICHCHOTHUEs" Relationship="Self.FK_LICHCHOTHUE_KHACHHANG" FromRole="KHACHHANG" ToRole="LICHCHOTHUE" />
-          <NavigationProperty Name="LICHTHUEs" Relationship="Self.FK_LICHTHUE_KHACHHANG" FromRole="KHACHHANG" ToRole="LICHTHUE" />
           <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_KHACHHANG" FromRole="KHACHHANG" ToRole="SUCO" />
-        </EntityType>
-        <EntityType Name="LICHCHOTHUE">
-          <Key>
-            <PropertyRef Name="STT" />
-          </Key>
-          <Property Name="STT" Type="Int32" Nullable="false" />
-          <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Mã_loại" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Ngày_đăng_ký" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Ngày_thuê" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Số_ngày_thuê" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_LICHCHOTHUE_KHACHHANG" FromRole="LICHCHOTHUE" ToRole="KHACHHANG" />
-          <NavigationProperty Name="LOAIXE" Relationship="Self.FK_LICHCHOTHUE_LOAIXE" FromRole="LICHCHOTHUE" ToRole="LOAIXE" />
         </EntityType>
         <EntityType Name="LOAIXE">
           <Key>
@@ -501,7 +382,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
           <Property Name="Tên_loại" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Số_lượng" Type="Int32" Nullable="false" />
           <Property Name="Mô_tả" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="LICHCHOTHUEs" Relationship="Self.FK_LICHCHOTHUE_LOAIXE" FromRole="LOAIXE" ToRole="LICHCHOTHUE" />
           <NavigationProperty Name="XEs" Relationship="Self.FK_XE_LOAIXE" FromRole="LOAIXE" ToRole="XE" />
         </EntityType>
         <EntityType Name="NHANVIEN">
@@ -574,25 +454,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
           <NavigationProperty Name="HOPDONGs" Relationship="Self.FK_HOPDONG_XE" FromRole="XE" ToRole="HOPDONG" />
           <NavigationProperty Name="LOAIXE" Relationship="Self.FK_XE_LOAIXE" FromRole="XE" ToRole="LOAIXE" />
           <NavigationProperty Name="SUCOes" Relationship="Self.FK_SUCO_XE" FromRole="XE" ToRole="SUCO" />
-          <NavigationProperty Name="LICHTHUEs" Relationship="Self.FK_LICHTHUE_XE" FromRole="XE" ToRole="LICHTHUE" />
-        </EntityType>
-        <EntityType Name="LICHTHUE">
-          <Key>
-            <PropertyRef Name="Số_xe" />
-            <PropertyRef Name="Mã_KH" />
-            <PropertyRef Name="Ngày_giao" />
-            <PropertyRef Name="Ngày_trả" />
-            <PropertyRef Name="Ngày_giao_thực_tế" />
-            <PropertyRef Name="Gia_hạn" />
-          </Key>
-          <Property Name="Số_xe" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Mã_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="Ngày_giao" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Ngày_trả" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Ngày_giao_thực_tế" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Gia_hạn" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_LICHTHUE_KHACHHANG" FromRole="LICHTHUE" ToRole="KHACHHANG" />
-          <NavigationProperty Name="XE" Relationship="Self.FK_LICHTHUE_XE" FromRole="LICHTHUE" ToRole="XE" />
         </EntityType>
         <Association Name="FK_BIENBANGN_KHACHHANG">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
@@ -678,30 +539,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LICHCHOTHUE_KHACHHANG">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-          <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHACHHANG">
-              <PropertyRef Name="Mã_KH" />
-            </Principal>
-            <Dependent Role="LICHCHOTHUE">
-              <PropertyRef Name="Mã_KH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LICHTHUE_KHACHHANG">
-          <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
-          <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHACHHANG">
-              <PropertyRef Name="Mã_KH" />
-            </Principal>
-            <Dependent Role="LICHTHUE">
-              <PropertyRef Name="Mã_KH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_SUCO_KHACHHANG">
           <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
           <End Role="SUCO" Type="Self.SUCO" Multiplicity="*" />
@@ -711,18 +548,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
             </Principal>
             <Dependent Role="SUCO">
               <PropertyRef Name="Mã_KH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LICHCHOTHUE_LOAIXE">
-          <End Role="LOAIXE" Type="Self.LOAIXE" Multiplicity="1" />
-          <End Role="LICHCHOTHUE" Type="Self.LICHCHOTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOAIXE">
-              <PropertyRef Name="Mã_loại" />
-            </Principal>
-            <Dependent Role="LICHCHOTHUE">
-              <PropertyRef Name="Mã_loại" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -774,30 +599,16 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LICHTHUE_XE">
-          <End Role="XE" Type="Self.XE" Multiplicity="1" />
-          <End Role="LICHTHUE" Type="Self.LICHTHUE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="XE">
-              <PropertyRef Name="Số_xe" />
-            </Principal>
-            <Dependent Role="LICHTHUE">
-              <PropertyRef Name="Số_xe" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="QuanlythueotoEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BIENBANGNs" EntityType="Self.BIENBANGN" />
           <EntitySet Name="HOPDONGs" EntityType="Self.HOPDONG" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
-          <EntitySet Name="LICHCHOTHUEs" EntityType="Self.LICHCHOTHUE" />
           <EntitySet Name="LOAIXEs" EntityType="Self.LOAIXE" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="SUCOes" EntityType="Self.SUCO" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="THANHTOANs" EntityType="Self.THANHTOAN" />
           <EntitySet Name="XEs" EntityType="Self.XE" />
-          <EntitySet Name="LICHTHUEs" EntityType="Self.LICHTHUE" />
           <AssociationSet Name="FK_BIENBANGN_KHACHHANG" Association="Self.FK_BIENBANGN_KHACHHANG">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="BIENBANGN" EntitySet="BIENBANGNs" />
@@ -826,21 +637,9 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
             <End Role="HOPDONG" EntitySet="HOPDONGs" />
             <End Role="THANHTOAN" EntitySet="THANHTOANs" />
           </AssociationSet>
-          <AssociationSet Name="FK_LICHCHOTHUE_KHACHHANG" Association="Self.FK_LICHCHOTHUE_KHACHHANG">
-            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-            <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUEs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHTHUE_KHACHHANG" Association="Self.FK_LICHTHUE_KHACHHANG">
-            <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
-            <End Role="LICHTHUE" EntitySet="LICHTHUEs" />
-          </AssociationSet>
           <AssociationSet Name="FK_SUCO_KHACHHANG" Association="Self.FK_SUCO_KHACHHANG">
             <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
             <End Role="SUCO" EntitySet="SUCOes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHCHOTHUE_LOAIXE" Association="Self.FK_LICHCHOTHUE_LOAIXE">
-            <End Role="LOAIXE" EntitySet="LOAIXEs" />
-            <End Role="LICHCHOTHUE" EntitySet="LICHCHOTHUEs" />
           </AssociationSet>
           <AssociationSet Name="FK_XE_LOAIXE" Association="Self.FK_XE_LOAIXE">
             <End Role="LOAIXE" EntitySet="LOAIXEs" />
@@ -857,10 +656,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
           <AssociationSet Name="FK_SUCO_XE" Association="Self.FK_SUCO_XE">
             <End Role="XE" EntitySet="XEs" />
             <End Role="SUCO" EntitySet="SUCOes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LICHTHUE_XE" Association="Self.FK_LICHTHUE_XE">
-            <End Role="XE" EntitySet="XEs" />
-            <End Role="LICHTHUE" EntitySet="LICHTHUEs" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -911,18 +706,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
                 <ScalarProperty Name="SĐT_KH" ColumnName="SĐT KH" />
                 <ScalarProperty Name="CMTKH" ColumnName="CMTKH" />
                 <ScalarProperty Name="GPLX" ColumnName="GPLX" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LICHCHOTHUEs">
-            <EntityTypeMapping TypeName="QuanlythueotoModel.LICHCHOTHUE">
-              <MappingFragment StoreEntitySet="LICHCHOTHUE">
-                <ScalarProperty Name="STT" ColumnName="STT" />
-                <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
-                <ScalarProperty Name="Mã_loại" ColumnName="Mã loại" />
-                <ScalarProperty Name="Ngày_đăng_ký" ColumnName="Ngày đăng ký" />
-                <ScalarProperty Name="Ngày_thuê" ColumnName="Ngày thuê" />
-                <ScalarProperty Name="Số_ngày_thuê" ColumnName="Số ngày thuê" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -996,18 +779,6 @@ warning 6002: The table/view 'Quanlythueoto.dbo.LICHTHUE' does not have a primar
                 <ScalarProperty Name="Đơn_giá" ColumnName="Đơn giá" />
                 <ScalarProperty Name="Mô_tả_tình_trạng" ColumnName="Mô tả tình trạng" />
                 <ScalarProperty Name="Trạng_thái" ColumnName="Trạng thái" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LICHTHUEs">
-            <EntityTypeMapping TypeName="QuanlythueotoModel.LICHTHUE">
-              <MappingFragment StoreEntitySet="LICHTHUE">
-                <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
-                <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
-                <ScalarProperty Name="Ngày_giao" ColumnName="Ngày giao" />
-                <ScalarProperty Name="Ngày_trả" ColumnName="Ngày trả" />
-                <ScalarProperty Name="Ngày_giao_thực_tế" ColumnName="Ngày giao thực tế" />
-                <ScalarProperty Name="Gia_hạn" ColumnName="Gia hạn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -19,8 +19,6 @@ namespace QuanLyChoThueOto.Models
         {
             this.BIENBANGNs = new HashSet<BIENBANGN>();
             this.HOPDONGs = new HashSet<HOPDONG>();
-            this.LICHCHOTHUEs = new HashSet<LICHCHOTHUE>();
-            this.LICHTHUEs = new HashSet<LICHTHUE>();
             this.SUCOes = new HashSet<SUCO>();
         }
     
@@ -35,10 +33,6 @@ namespace QuanLyChoThueOto.Models
         public virtual ICollection<BIENBANGN> BIENBANGNs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHCHOTHUE> LICHCHOTHUEs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LICHTHUE> LICHTHUEs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SUCO> SUCOes { get; set; }
     }

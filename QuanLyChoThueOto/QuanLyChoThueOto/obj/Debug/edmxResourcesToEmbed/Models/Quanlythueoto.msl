@@ -46,18 +46,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LICHCHOTHUEs">
-      <EntityTypeMapping TypeName="QuanlythueotoModel.LICHCHOTHUE">
-        <MappingFragment StoreEntitySet="LICHCHOTHUE">
-          <ScalarProperty Name="STT" ColumnName="STT" />
-          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
-          <ScalarProperty Name="Mã_loại" ColumnName="Mã loại" />
-          <ScalarProperty Name="Ngày_đăng_ký" ColumnName="Ngày đăng ký" />
-          <ScalarProperty Name="Ngày_thuê" ColumnName="Ngày thuê" />
-          <ScalarProperty Name="Số_ngày_thuê" ColumnName="Số ngày thuê" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="LOAIXEs">
       <EntityTypeMapping TypeName="QuanlythueotoModel.LOAIXE">
         <MappingFragment StoreEntitySet="LOAIXE">
@@ -128,18 +116,6 @@
           <ScalarProperty Name="Đơn_giá" ColumnName="Đơn giá" />
           <ScalarProperty Name="Mô_tả_tình_trạng" ColumnName="Mô tả tình trạng" />
           <ScalarProperty Name="Trạng_thái" ColumnName="Trạng thái" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="LICHTHUEs">
-      <EntityTypeMapping TypeName="QuanlythueotoModel.LICHTHUE">
-        <MappingFragment StoreEntitySet="LICHTHUE">
-          <ScalarProperty Name="Số_xe" ColumnName="Số xe" />
-          <ScalarProperty Name="Mã_KH" ColumnName="Mã KH" />
-          <ScalarProperty Name="Ngày_giao" ColumnName="Ngày giao" />
-          <ScalarProperty Name="Ngày_trả" ColumnName="Ngày trả" />
-          <ScalarProperty Name="Ngày_giao_thực_tế" ColumnName="Ngày giao thực tế" />
-          <ScalarProperty Name="Gia_hạn" ColumnName="Gia hạn" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
