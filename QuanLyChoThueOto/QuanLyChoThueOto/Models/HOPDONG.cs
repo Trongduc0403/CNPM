@@ -12,28 +12,28 @@ namespace QuanLyChoThueOto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class HOPDONG
+    public partial class HopDong
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HOPDONG()
+        public HopDong()
         {
-            this.THANHTOANs = new HashSet<THANHTOAN>();
+            this.ThanhToans = new HashSet<ThanhToan>();
         }
     
-        public string Số_HĐ { get; set; }
-        public string Số_xe { get; set; }
-        public string Mã_KH { get; set; }
-        public string Mã_NV { get; set; }
-        public Nullable<System.DateTime> Ngày_HĐ { get; set; }
-        public string Nội_dung_HĐ { get; set; }
-        public string Tiền_đặt { get; set; }
-        public string Khuyến_mãi { get; set; }
-        public string Giấy_tờ_giữ_lại { get; set; }
+        public int idHopDong { get; set; }
+        public Nullable<int> idXe { get; set; }
+        public Nullable<int> idKH { get; set; }
+        public Nullable<int> idNV { get; set; }
+        public Nullable<System.DateTime> NgayHD { get; set; }
+        public string NoiDungHD { get; set; }
+        public string TienDat { get; set; }
+        public string KhuyenMai { get; set; }
+        public string GiayToGiuLai { get; set; }
     
-        public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
-        public virtual XE XE { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
+        public virtual Xe Xe { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<THANHTOAN> THANHTOANs { get; set; }
+        public virtual ICollection<ThanhToan> ThanhToans { get; set; }
     }
 }

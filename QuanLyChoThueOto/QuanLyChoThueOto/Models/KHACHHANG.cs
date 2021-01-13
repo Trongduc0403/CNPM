@@ -12,28 +12,28 @@ namespace QuanLyChoThueOto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KHACHHANG
+    public partial class KhachHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHACHHANG()
+        public KhachHang()
         {
-            this.BIENBANGNs = new HashSet<BIENBANGN>();
-            this.HOPDONGs = new HashSet<HOPDONG>();
-            this.SUCOes = new HashSet<SUCO>();
+            this.BBGNs = new HashSet<BBGN>();
+            this.BBSCs = new HashSet<BBSC>();
+            this.HopDongs = new HashSet<HopDong>();
         }
     
-        public string Mã_KH { get; set; }
-        public string Tên_KH { get; set; }
-        public string Địa_chỉ { get; set; }
-        public string SĐT_KH { get; set; }
-        public string CMTKH { get; set; }
+        public int idKH { get; set; }
+        public string TenKH { get; set; }
+        public string DiaChi { get; set; }
+        public string sdtKH { get; set; }
+        public string cmtKH { get; set; }
         public string GPLX { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BIENBANGN> BIENBANGNs { get; set; }
+        public virtual ICollection<BBGN> BBGNs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
+        public virtual ICollection<BBSC> BBSCs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUCO> SUCOes { get; set; }
+        public virtual ICollection<HopDong> HopDongs { get; set; }
     }
 }

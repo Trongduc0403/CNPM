@@ -12,17 +12,17 @@ namespace QuanLyChoThueOto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class THANHTOAN
+    public partial class ThanhToan
     {
-        public string Số_HĐTT { get; set; }
-        public string Số_HĐ { get; set; }
-        public string Mã_NV { get; set; }
-        public System.DateTime Ngày_thanh_toán { get; set; }
-        public string Lý_do { get; set; }
-        public string Hồ_sơ_kèm { get; set; }
-        public string Tiền_TT { get; set; }
+        public int idHoaDon { get; set; }
+        public Nullable<int> idHopDong { get; set; }
+        public Nullable<int> idNV { get; set; }
+        public Nullable<System.DateTime> NgayTT { get; set; }
+        public string LyDo { get; set; }
+        public string HoSoKem { get; set; }
+        public string TienTT { get; set; }
     
-        public virtual HOPDONG HOPDONG { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual HopDong HopDong { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

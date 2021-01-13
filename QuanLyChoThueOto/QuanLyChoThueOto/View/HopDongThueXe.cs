@@ -26,9 +26,6 @@ namespace QuanLyChoThueOto
         }
 
 
-
-
-
         private void btThoat_Click(object sender, EventArgs e)
         {
             Close();
@@ -36,15 +33,15 @@ namespace QuanLyChoThueOto
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            HOPDONG hopdong = new HOPDONG();
-            hopdong.Số_HĐ = txtSoDH.Text.ToString();
-            hopdong.Số_xe = cbbSoXe.Text.ToString();
-            hopdong.Mã_KH = txtMaKH.Text.ToString();
+            HopDong hopdong = new HopDong();
+            hopdong.idHopDong = int.Parse(txtSoDH.Text);
+            hopdong.idXe = int.Parse(cbbSoXe.Text);
+            hopdong.idKH = int.Parse(txtMaKH.Text);
             //hopdong.Ngày_HĐ = DateTime.Parse(msktbNgayHD.Text);
-            hopdong.Nội_dung_HĐ = this.txtNoiDungHD.Text.ToString();
-            hopdong.Tiền_đặt = this.txtTienDat.Text.ToString();
-            hopdong.Khuyến_mãi = this.txtKhuyenMai.Text.ToString();
-            hopdong.Giấy_tờ_giữ_lại = this.txtGiayTo.Text.ToString();
+            hopdong.NoiDungHD = this.txtNoiDungHD.Text.ToString();
+            hopdong.TienDat = this.txtTienDat.Text.ToString();
+            hopdong.KhuyenMai = this.txtKhuyenMai.Text.ToString();
+            hopdong.GiayToGiuLai = this.txtGiayTo.Text.ToString();
             if(HopDongController.AddHopDong(hopdong))
             {
                 MessageBox.Show("ok");

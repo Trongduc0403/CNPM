@@ -79,7 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\HopDongController.cs" />
-    <Compile Include="Models\BIENBANGN.cs">
+    <Compile Include="Models\BBGN.cs">
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BBSC.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DBQuanlythueoto.Context.cs">
@@ -97,28 +100,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBQuanlythueoto.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\HOPDONG.cs">
+    <Compile Include="Models\HopDong.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\KHACHHANG.cs">
+    <Compile Include="Models\KhachHang.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LOAIXE.cs">
+    <Compile Include="Models\LoaiXe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NHANVIEN.cs">
-      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SUCO.cs">
+    <Compile Include="Models\NhanVien.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\THANHTOAN.cs">
+    <Compile Include="Models\ThanhToan.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\XE.cs">
+    <Compile Include="Models\Xe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="View\BBGN.cs">

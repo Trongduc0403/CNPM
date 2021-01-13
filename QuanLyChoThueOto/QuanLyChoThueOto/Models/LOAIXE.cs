@@ -12,20 +12,20 @@ namespace QuanLyChoThueOto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class LOAIXE
+    public partial class LoaiXe
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAIXE()
+        public LoaiXe()
         {
-            this.XEs = new HashSet<XE>();
+            this.Xes = new HashSet<Xe>();
         }
     
-        public string Mã_loại { get; set; }
-        public string Tên_loại { get; set; }
-        public int Số_lượng { get; set; }
-        public string Mô_tả { get; set; }
+        public int idLoaiXe { get; set; }
+        public string TenLoai { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public string MoTa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<XE> XEs { get; set; }
+        public virtual ICollection<Xe> Xes { get; set; }
     }
 }

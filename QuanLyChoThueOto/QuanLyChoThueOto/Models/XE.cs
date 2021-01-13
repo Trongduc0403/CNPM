@@ -12,31 +12,28 @@ namespace QuanLyChoThueOto.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class XE
+    public partial class Xe
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public XE()
+        public Xe()
         {
-            this.BIENBANGNs = new HashSet<BIENBANGN>();
-            this.HOPDONGs = new HashSet<HOPDONG>();
-            this.SUCOes = new HashSet<SUCO>();
+            this.BBSCs = new HashSet<BBSC>();
+            this.HopDongs = new HashSet<HopDong>();
         }
     
-        public string Số_xe { get; set; }
-        public string Mã_loại { get; set; }
-        public string Tên_xe { get; set; }
-        public string Phí_xăng { get; set; }
-        public string Phí_quá_km { get; set; }
-        public string Đơn_giá { get; set; }
-        public string Mô_tả_tình_trạng { get; set; }
-        public int Trạng_thái { get; set; }
+        public int idXe { get; set; }
+        public Nullable<int> idLoaiXe { get; set; }
+        public string TenXe { get; set; }
+        public string PhiXang { get; set; }
+        public string PhiQuaKm { get; set; }
+        public string DonGia { get; set; }
+        public string MoTaTT { get; set; }
+        public Nullable<int> TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BIENBANGN> BIENBANGNs { get; set; }
+        public virtual ICollection<BBSC> BBSCs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
-        public virtual LOAIXE LOAIXE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUCO> SUCOes { get; set; }
+        public virtual ICollection<HopDong> HopDongs { get; set; }
+        public virtual LoaiXe LoaiXe { get; set; }
     }
 }
