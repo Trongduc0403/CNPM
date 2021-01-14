@@ -47,13 +47,10 @@ namespace QuanLyChoThueOto
             this.clNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGiayToGiuLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.msktbNgayHD = new System.Windows.Forms.MaskedTextBox();
-            this.cbbSoXe = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtKhuyenMai = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtNoiDungHD = new System.Windows.Forms.TextBox();
             this.txtTienDat = new System.Windows.Forms.TextBox();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtSoDH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,6 +63,9 @@ namespace QuanLyChoThueOto
             this.label8 = new System.Windows.Forms.Label();
             this.txtGiayTo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.cbbMaKH = new System.Windows.Forms.ComboBox();
+            this.cbbMaNV = new System.Windows.Forms.ComboBox();
+            this.cbbSoXe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,7 +108,7 @@ namespace QuanLyChoThueOto
             this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
             this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btThoat.Location = new System.Drawing.Point(640, 466);
             this.btThoat.Name = "btThoat";
@@ -211,17 +211,8 @@ namespace QuanLyChoThueOto
             this.msktbNgayHD.Mask = "00/00/0000";
             this.msktbNgayHD.Name = "msktbNgayHD";
             this.msktbNgayHD.Size = new System.Drawing.Size(181, 30);
-            this.msktbNgayHD.TabIndex = 77;
+            this.msktbNgayHD.TabIndex = 6;
             this.msktbNgayHD.ValidatingType = typeof(System.DateTime);
-            // 
-            // cbbSoXe
-            // 
-            this.cbbSoXe.Font = new System.Drawing.Font("Tahoma", 13.25F);
-            this.cbbSoXe.FormattingEnabled = true;
-            this.cbbSoXe.Location = new System.Drawing.Point(103, 333);
-            this.cbbSoXe.Name = "cbbSoXe";
-            this.cbbSoXe.Size = new System.Drawing.Size(181, 30);
-            this.cbbSoXe.TabIndex = 76;
             // 
             // label15
             // 
@@ -236,46 +227,34 @@ namespace QuanLyChoThueOto
             // 
             // txtKhuyenMai
             // 
+            this.txtKhuyenMai.Font = new System.Drawing.Font("Tahoma", 13.25F);
             this.txtKhuyenMai.Location = new System.Drawing.Point(103, 233);
             this.txtKhuyenMai.Multiline = true;
             this.txtKhuyenMai.Name = "txtKhuyenMai";
             this.txtKhuyenMai.Size = new System.Drawing.Size(181, 30);
-            this.txtKhuyenMai.TabIndex = 74;
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(103, 140);
-            this.txtMaNV.Multiline = true;
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(181, 30);
-            this.txtMaNV.TabIndex = 73;
+            this.txtKhuyenMai.TabIndex = 5;
             // 
             // txtNoiDungHD
             // 
+            this.txtNoiDungHD.Font = new System.Drawing.Font("Tahoma", 13.25F);
             this.txtNoiDungHD.Location = new System.Drawing.Point(103, 430);
             this.txtNoiDungHD.Multiline = true;
             this.txtNoiDungHD.Name = "txtNoiDungHD";
             this.txtNoiDungHD.Size = new System.Drawing.Size(938, 30);
-            this.txtNoiDungHD.TabIndex = 72;
+            this.txtNoiDungHD.TabIndex = 9;
             // 
             // txtTienDat
             // 
+            this.txtTienDat.Font = new System.Drawing.Font("Tahoma", 13.25F);
             this.txtTienDat.Location = new System.Drawing.Point(103, 186);
             this.txtTienDat.Multiline = true;
             this.txtTienDat.Name = "txtTienDat";
             this.txtTienDat.Size = new System.Drawing.Size(181, 30);
-            this.txtTienDat.TabIndex = 71;
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Location = new System.Drawing.Point(103, 91);
-            this.txtMaKH.Multiline = true;
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(181, 30);
-            this.txtMaKH.TabIndex = 70;
+            this.txtTienDat.TabIndex = 4;
             // 
             // txtSoDH
             // 
+            this.txtSoDH.Font = new System.Drawing.Font("Tahoma", 13.25F);
             this.txtSoDH.Location = new System.Drawing.Point(103, 46);
             this.txtSoDH.Multiline = true;
             this.txtSoDH.Name = "txtSoDH";
@@ -391,11 +370,12 @@ namespace QuanLyChoThueOto
             // 
             // txtGiayTo
             // 
+            this.txtGiayTo.Font = new System.Drawing.Font("Tahoma", 13.25F);
             this.txtGiayTo.Location = new System.Drawing.Point(104, 383);
             this.txtGiayTo.Multiline = true;
             this.txtGiayTo.Name = "txtGiayTo";
             this.txtGiayTo.Size = new System.Drawing.Size(180, 30);
-            this.txtGiayTo.TabIndex = 74;
+            this.txtGiayTo.TabIndex = 8;
             // 
             // label10
             // 
@@ -408,6 +388,36 @@ namespace QuanLyChoThueOto
             this.label10.TabIndex = 78;
             this.label10.Text = "Hợp đồng thuê xe";
             // 
+            // cbbMaKH
+            // 
+            this.cbbMaKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaKH.Font = new System.Drawing.Font("Tahoma", 13.25F);
+            this.cbbMaKH.FormattingEnabled = true;
+            this.cbbMaKH.Location = new System.Drawing.Point(103, 92);
+            this.cbbMaKH.Name = "cbbMaKH";
+            this.cbbMaKH.Size = new System.Drawing.Size(181, 30);
+            this.cbbMaKH.TabIndex = 2;
+            // 
+            // cbbMaNV
+            // 
+            this.cbbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMaNV.Font = new System.Drawing.Font("Tahoma", 13.25F);
+            this.cbbMaNV.FormattingEnabled = true;
+            this.cbbMaNV.Location = new System.Drawing.Point(104, 139);
+            this.cbbMaNV.Name = "cbbMaNV";
+            this.cbbMaNV.Size = new System.Drawing.Size(181, 30);
+            this.cbbMaNV.TabIndex = 3;
+            // 
+            // cbbSoXe
+            // 
+            this.cbbSoXe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbSoXe.Font = new System.Drawing.Font("Tahoma", 13.25F);
+            this.cbbSoXe.FormattingEnabled = true;
+            this.cbbSoXe.Location = new System.Drawing.Point(103, 333);
+            this.cbbSoXe.Name = "cbbSoXe";
+            this.cbbSoXe.Size = new System.Drawing.Size(181, 30);
+            this.cbbSoXe.TabIndex = 7;
+            // 
             // HopDongThueXe
             // 
             this.Appearance.BackColor = System.Drawing.Color.Cornsilk;
@@ -415,16 +425,16 @@ namespace QuanLyChoThueOto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 513);
+            this.Controls.Add(this.cbbMaKH);
+            this.Controls.Add(this.cbbMaNV);
+            this.Controls.Add(this.cbbSoXe);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.msktbNgayHD);
-            this.Controls.Add(this.cbbSoXe);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtGiayTo);
             this.Controls.Add(this.txtKhuyenMai);
-            this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.txtNoiDungHD);
             this.Controls.Add(this.txtTienDat);
-            this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.txtSoDH);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -461,13 +471,10 @@ namespace QuanLyChoThueOto
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.MaskedTextBox msktbNgayHD;
-        private System.Windows.Forms.ComboBox cbbSoXe;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtKhuyenMai;
-        private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtNoiDungHD;
         private System.Windows.Forms.TextBox txtTienDat;
-        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.TextBox txtSoDH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -489,5 +496,8 @@ namespace QuanLyChoThueOto
         private System.Windows.Forms.DataGridViewTextBoxColumn clKhuyenMai;
         private System.Windows.Forms.DataGridViewTextBoxColumn clNoiDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn clGiayToGiuLai;
+        private System.Windows.Forms.ComboBox cbbMaKH;
+        private System.Windows.Forms.ComboBox cbbMaNV;
+        private System.Windows.Forms.ComboBox cbbSoXe;
     }
 }
