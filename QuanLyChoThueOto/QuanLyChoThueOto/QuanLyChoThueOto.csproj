@@ -78,9 +78,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LoaiXeController.cs" />
     <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\HopDongController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\XeController.cs" />
     <Compile Include="Models\BBGN.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
@@ -120,11 +122,23 @@
     <Compile Include="Models\Xe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\NhanVien.cs">
+    <Compile Include="View\ThongTinXe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <Compile Include="View\ThongTinXe.Designer.cs">
+      <DependentUpon>ThongTinXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongTinLoaiXe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThongTinLoaiXe.Designer.cs">
+      <DependentUpon>ThongTinLoaiXe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongTinNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThongTinNhanVien.Designer.cs">
+      <DependentUpon>ThongTinNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\BBGN.cs">
       <SubType>Form</SubType>
@@ -137,12 +151,6 @@
     </Compile>
     <Compile Include="View\ChiTietBBGN.Designer.cs">
       <DependentUpon>ChiTietBBGN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\CapNhatThongTinHD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\CapNhatThongTinHD.Designer.cs">
-      <DependentUpon>CapNhatThongTinHD.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CapNhatThongTinKH.cs">
       <SubType>Form</SubType>
@@ -174,11 +182,11 @@
     <Compile Include="View\HopDongThueXe.Designer.cs">
       <DependentUpon>HopDongThueXe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\KhachHang.cs">
+    <Compile Include="View\ThongTinKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\KhachHang.Designer.cs">
-      <DependentUpon>KhachHang.cs</DependentUpon>
+    <Compile Include="View\ThongTinKhachHang.Designer.cs">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ManHinhChinh.cs">
       <SubType>Form</SubType>
@@ -200,17 +208,17 @@
     <Compile Include="View\DangKyThueXe.Designer.cs">
       <DependentUpon>DangKyThueXe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="View\ThongTinLoaiXe.resx">
+      <DependentUpon>ThongTinLoaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThongTinNhanVien.resx">
+      <DependentUpon>ThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\BBGN.resx">
       <DependentUpon>BBGN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChiTietBBGN.resx">
       <DependentUpon>ChiTietBBGN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\CapNhatThongTinHD.resx">
-      <DependentUpon>CapNhatThongTinHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CapNhatThongTinKH.resx">
       <DependentUpon>CapNhatThongTinKH.cs</DependentUpon>
@@ -227,8 +235,8 @@
     <EmbeddedResource Include="View\HopDongThueXe.resx">
       <DependentUpon>HopDongThueXe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\KhachHang.resx">
-      <DependentUpon>KhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="View\ThongTinKhachHang.resx">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ManHinhChinh.resx">
       <DependentUpon>ManHinhChinh.cs</DependentUpon>
@@ -248,6 +256,9 @@
     </Compile>
     <EmbeddedResource Include="View\DangKyThueXe.resx">
       <DependentUpon>DangKyThueXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThongTinXe.resx">
+      <DependentUpon>ThongTinXe.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\DBQuanlythueoto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

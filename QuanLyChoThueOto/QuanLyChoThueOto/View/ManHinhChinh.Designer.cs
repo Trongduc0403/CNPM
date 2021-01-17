@@ -232,6 +232,7 @@ namespace QuanLyChoThueOto
             this.btLoaiXe.Name = "btLoaiXe";
             this.btLoaiXe.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btLoaiXe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btLoaiXe_ItemClick);
             // 
             // btXe
             // 
@@ -240,6 +241,7 @@ namespace QuanLyChoThueOto
             this.btXe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btXe.ImageOptions.Image")));
             this.btXe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btXe.ImageOptions.LargeImage")));
             this.btXe.Name = "btXe";
+            this.btXe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btXe_ItemClick);
             // 
             // btBaoCaoSuCo
             // 

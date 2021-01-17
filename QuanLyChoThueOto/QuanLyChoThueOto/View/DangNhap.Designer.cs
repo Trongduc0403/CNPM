@@ -118,6 +118,7 @@ namespace QuanLyChoThueOto
             // 
             // btThoat
             // 
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
             this.btThoat.Location = new System.Drawing.Point(279, 166);
             this.btThoat.Name = "btThoat";
@@ -166,6 +167,7 @@ namespace QuanLyChoThueOto
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btThoat;
             this.ClientSize = new System.Drawing.Size(951, 458);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.groupControl1);

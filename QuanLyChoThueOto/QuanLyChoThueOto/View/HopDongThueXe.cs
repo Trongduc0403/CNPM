@@ -96,14 +96,11 @@ namespace QuanLyChoThueOto
         {
             using (CNPMEntities db = new CNPMEntities())
             {
-                var getnv = (from hd in db.HopDongs
-                            join nv in db.NhanViens on hd.idNV equals nv.idNV
+                var getnv = (from nv in db.NhanViens
                             select nv).ToList();
-                var getkh = (from hd in db.HopDongs
-                            join kh in db.KhachHangs on hd.idKH equals kh.idKH
+                var getkh = (from kh in db.KhachHangs
                             select kh).ToList();
-                var xe = (from hd in db.HopDongs
-                            join x in db.Xes on hd.idXe equals x.idXe
+                var xe = (from x in db.Xes
                             select x).ToList();
                 this.cbbMaNV.DataSource = getnv;
                 this.cbbMaNV.ValueMember = "idNV";
@@ -123,12 +120,6 @@ namespace QuanLyChoThueOto
                 BindGrid(lstHopDong);
 
             }
-        }
-
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            CapNhatThongTinHD f = new CapNhatThongTinHD();
-            f.Show();
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -173,19 +164,19 @@ namespace QuanLyChoThueOto
                 dbhd.NoiDungHD = txtNoiDungHD.Text.ToString();
                 dbhd.GiayToGiuLai = txtGiayTo.Text.ToString();
                 db.SaveChanges();
-                XtraMessageBox.Show("edit success", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                XtraMessageBox.Show("Edit success", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             GetMaHD = null;
+            CNPMEntities context = new CNPMEntities();
+            List<HopDong> lstHopDong = context.HopDongs.ToList();
+            BindGrid(lstHopDong);
         }
-
-        
-
         private void btXoa_Click(object sender, EventArgs e)
         {
             if (HopDongController.RemoveHopDong(GetMaHD))
                 MessageBox.Show("Deleted");
-            MessageBox.Show("vui long chon hang de xoa");
+            else
+                MessageBox.Show("vui long chon hang de xoa");
         }
 
         private void dgvHD_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

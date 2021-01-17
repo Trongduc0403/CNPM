@@ -32,13 +32,6 @@ namespace QuanLyChoThueOto
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HopDongThueXe));
             this.label10 = new System.Windows.Forms.Label();
             this.msktbNgayHD = new System.Windows.Forms.MaskedTextBox();
-            this.clGiayToGiuLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clTienDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clNgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbSoXe = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtGiayTo = new System.Windows.Forms.TextBox();
@@ -58,6 +51,13 @@ namespace QuanLyChoThueOto
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.clSoHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSoXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clNgayHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTienDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clKhuyenMai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clNoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clGiayToGiuLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btThem = new DevExpress.XtraEditors.SimpleButton();
             this.btSua = new DevExpress.XtraEditors.SimpleButton();
@@ -89,41 +89,6 @@ namespace QuanLyChoThueOto
             this.msktbNgayHD.Size = new System.Drawing.Size(181, 30);
             this.msktbNgayHD.TabIndex = 6;
             this.msktbNgayHD.ValidatingType = typeof(System.DateTime);
-            // 
-            // clGiayToGiuLai
-            // 
-            this.clGiayToGiuLai.HeaderText = "Giấy tờ giữ lại";
-            this.clGiayToGiuLai.Name = "clGiayToGiuLai";
-            // 
-            // clNoiDung
-            // 
-            this.clNoiDung.HeaderText = "Nội dung";
-            this.clNoiDung.Name = "clNoiDung";
-            // 
-            // clKhuyenMai
-            // 
-            this.clKhuyenMai.HeaderText = "Khuyến mãi";
-            this.clKhuyenMai.Name = "clKhuyenMai";
-            // 
-            // clTienDat
-            // 
-            this.clTienDat.HeaderText = "Tiền đặt";
-            this.clTienDat.Name = "clTienDat";
-            // 
-            // clNgayHD
-            // 
-            this.clNgayHD.HeaderText = "Ngày HĐ";
-            this.clNgayHD.Name = "clNgayHD";
-            // 
-            // clMaKH
-            // 
-            this.clMaKH.HeaderText = "Mã KH";
-            this.clMaKH.Name = "clMaKH";
-            // 
-            // clMaNV
-            // 
-            this.clMaNV.HeaderText = "Mã NV";
-            this.clMaNV.Name = "clMaNV";
             // 
             // cbbSoXe
             // 
@@ -166,6 +131,8 @@ namespace QuanLyChoThueOto
             // 
             // txtNoiDungHD
             // 
+            this.txtNoiDungHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNoiDungHD.Font = new System.Drawing.Font("Tahoma", 13.25F);
             this.txtNoiDungHD.Location = new System.Drawing.Point(101, 423);
             this.txtNoiDungHD.Multiline = true;
@@ -216,6 +183,8 @@ namespace QuanLyChoThueOto
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Cornsilk;
             this.label5.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -300,7 +269,8 @@ namespace QuanLyChoThueOto
             // 
             // dgvHD
             // 
-            this.dgvHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -315,19 +285,64 @@ namespace QuanLyChoThueOto
             this.clGiayToGiuLai});
             this.dgvHD.Location = new System.Drawing.Point(285, 38);
             this.dgvHD.Name = "dgvHD";
+            this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHD.Size = new System.Drawing.Size(754, 368);
             this.dgvHD.TabIndex = 85;
             this.dgvHD.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHD_CellMouseClick);
             // 
             // clSoHD
             // 
+            this.clSoHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clSoHD.HeaderText = "Số HĐ";
             this.clSoHD.Name = "clSoHD";
             // 
             // clSoXe
             // 
+            this.clSoXe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clSoXe.HeaderText = "Số xe";
             this.clSoXe.Name = "clSoXe";
+            // 
+            // clMaNV
+            // 
+            this.clMaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clMaNV.HeaderText = "Mã NV";
+            this.clMaNV.Name = "clMaNV";
+            // 
+            // clMaKH
+            // 
+            this.clMaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clMaKH.HeaderText = "Mã KH";
+            this.clMaKH.Name = "clMaKH";
+            // 
+            // clNgayHD
+            // 
+            this.clNgayHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clNgayHD.HeaderText = "Ngày HĐ";
+            this.clNgayHD.Name = "clNgayHD";
+            // 
+            // clTienDat
+            // 
+            this.clTienDat.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clTienDat.HeaderText = "Tiền đặt";
+            this.clTienDat.Name = "clTienDat";
+            // 
+            // clKhuyenMai
+            // 
+            this.clKhuyenMai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clKhuyenMai.HeaderText = "Khuyến mãi";
+            this.clKhuyenMai.Name = "clKhuyenMai";
+            // 
+            // clNoiDung
+            // 
+            this.clNoiDung.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clNoiDung.HeaderText = "Nội dung";
+            this.clNoiDung.Name = "clNoiDung";
+            // 
+            // clGiayToGiuLai
+            // 
+            this.clGiayToGiuLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clGiayToGiuLai.HeaderText = "Giấy tờ giữ lại";
+            this.clGiayToGiuLai.Name = "clGiayToGiuLai";
             // 
             // label1
             // 
@@ -342,6 +357,7 @@ namespace QuanLyChoThueOto
             // 
             // btThem
             // 
+            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btThem.Appearance.Options.UseFont = true;
             this.btThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThem.ImageOptions.Image")));
@@ -354,6 +370,7 @@ namespace QuanLyChoThueOto
             // 
             // btSua
             // 
+            this.btSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btSua.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btSua.Appearance.Options.UseFont = true;
             this.btSua.Enabled = false;
@@ -367,6 +384,7 @@ namespace QuanLyChoThueOto
             // 
             // btXoa
             // 
+            this.btXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btXoa.Appearance.Options.UseFont = true;
             this.btXoa.Enabled = false;
@@ -380,9 +398,11 @@ namespace QuanLyChoThueOto
             // 
             // btThoat
             // 
+            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
             this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btThoat.Location = new System.Drawing.Point(638, 459);
@@ -394,6 +414,7 @@ namespace QuanLyChoThueOto
             // 
             // btIn
             // 
+            this.btIn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btIn.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btIn.Appearance.Options.UseFont = true;
             this.btIn.Cursor = System.Windows.Forms.Cursors.Default;
@@ -428,10 +449,12 @@ namespace QuanLyChoThueOto
             // 
             // HopDongThueXe
             // 
+            this.AcceptButton = this.btThem;
             this.Appearance.BackColor = System.Drawing.Color.Cornsilk;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btThoat;
             this.ClientSize = new System.Drawing.Size(1043, 499);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.msktbNgayHD);
@@ -473,13 +496,6 @@ namespace QuanLyChoThueOto
 
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox msktbNgayHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clGiayToGiuLai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNoiDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clKhuyenMai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clTienDat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clNgayHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clMaNV;
         private System.Windows.Forms.ComboBox cbbSoXe;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtGiayTo;
@@ -497,8 +513,6 @@ namespace QuanLyChoThueOto
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSoHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSoXe;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btThem;
         private DevExpress.XtraEditors.SimpleButton btSua;
@@ -507,5 +521,14 @@ namespace QuanLyChoThueOto
         private DevExpress.XtraEditors.SimpleButton btIn;
         private System.Windows.Forms.ComboBox cbbMaNV;
         private System.Windows.Forms.ComboBox cbbMaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSoHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSoXe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clNgayHD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clTienDat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clKhuyenMai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clNoiDung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clGiayToGiuLai;
     }
 }

@@ -90,14 +90,30 @@ namespace QuanLyChoThueOto
 
         private void btKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            KhachHang f = new KhachHang();
+            ThongTinKhachHang f = new ThongTinKhachHang();
             f.ShowDialog();
         }
 
         private void btNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            NhanVien f = new NhanVien();
+            ThongTinNhanVien f = new ThongTinNhanVien();
             f.ShowDialog();
+        }
+
+        private void btLoaiXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ThongTinLoaiXe f = new ThongTinLoaiXe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ThongTinXe f = new ThongTinXe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

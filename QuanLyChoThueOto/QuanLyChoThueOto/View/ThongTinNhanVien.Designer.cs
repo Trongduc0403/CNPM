@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyChoThueOto
 {
-    partial class NhanVien
+    partial class ThongTinNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace QuanLyChoThueOto
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinNhanVien));
             this.label10 = new System.Windows.Forms.Label();
             this.txtCMT = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@ namespace QuanLyChoThueOto
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 16.25F, System.Drawing.FontStyle.Bold);
             this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(31, 9);
+            this.label10.Location = new System.Drawing.Point(58, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(123, 27);
             this.label10.TabIndex = 107;
@@ -173,6 +173,9 @@ namespace QuanLyChoThueOto
             // 
             // dgvNV
             // 
+            this.dgvNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clMaNV,
@@ -182,8 +185,10 @@ namespace QuanLyChoThueOto
             this.clCMT});
             this.dgvNV.Location = new System.Drawing.Point(250, 62);
             this.dgvNV.Name = "dgvNV";
-            this.dgvNV.Size = new System.Drawing.Size(572, 264);
+            this.dgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNV.Size = new System.Drawing.Size(670, 316);
             this.dgvNV.TabIndex = 120;
+            this.dgvNV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNV_CellMouseClick);
             // 
             // clMaNV
             // 
@@ -229,10 +234,11 @@ namespace QuanLyChoThueOto
             // 
             // btThem
             // 
+            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btThem.Appearance.Options.UseFont = true;
             this.btThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThem.ImageOptions.Image")));
-            this.btThem.Location = new System.Drawing.Point(251, 332);
+            this.btThem.Location = new System.Drawing.Point(250, 384);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(88, 37);
             this.btThem.TabIndex = 122;
@@ -241,49 +247,57 @@ namespace QuanLyChoThueOto
             // 
             // btSua
             // 
+            this.btSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btSua.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btSua.Appearance.Options.UseFont = true;
             this.btSua.Enabled = false;
             this.btSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSua.ImageOptions.Image")));
-            this.btSua.Location = new System.Drawing.Point(345, 332);
+            this.btSua.Location = new System.Drawing.Point(344, 384);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(88, 37);
             this.btSua.TabIndex = 123;
             this.btSua.Text = "Sửa";
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
+            this.btXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btXoa.Appearance.Options.UseFont = true;
             this.btXoa.Enabled = false;
             this.btXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.ImageOptions.Image")));
-            this.btXoa.Location = new System.Drawing.Point(439, 332);
+            this.btXoa.Location = new System.Drawing.Point(438, 384);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(88, 37);
             this.btXoa.TabIndex = 124;
             this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btThoat
             // 
+            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
             this.btThoat.Appearance.Options.UseFont = true;
             this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
             this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btThoat.Location = new System.Drawing.Point(533, 332);
+            this.btThoat.Location = new System.Drawing.Point(532, 384);
             this.btThoat.Name = "btThoat";
             this.btThoat.Size = new System.Drawing.Size(88, 37);
             this.btThoat.TabIndex = 125;
             this.btThoat.Text = "Đóng";
             this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
-            // NhanVien
+            // ThongTinNhanVien
             // 
+            this.AcceptButton = this.btThem;
             this.Appearance.BackColor = System.Drawing.Color.Cornsilk;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 375);
+            this.CancelButton = this.btThoat;
+            this.ClientSize = new System.Drawing.Size(925, 427);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btSua);
             this.Controls.Add(this.btXoa);
@@ -301,8 +315,8 @@ namespace QuanLyChoThueOto
             this.Controls.Add(this.labelTenKH);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label10);
-            this.Name = "NhanVien";
-            this.Text = "NhanVien";
+            this.Name = "ThongTinNhanVien";
+            this.Text = "Thông tin nhân viên";
             this.Load += new System.EventHandler(this.NhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             this.ResumeLayout(false);

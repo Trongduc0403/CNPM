@@ -3,34 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuanLyChoThueOto.Controller;
 using QuanLyChoThueOto.Models;
 
 namespace QuanLyChoThueOto.Controller
 {
-    class KhachHangController
+    class LoaiXeController
     {
-        public static bool AddKhachHang(KhachHang khachhang  )
+        public static bool AddLoaiXe(LoaiXe loaixe)
         {
             using (var _context = new CNPMEntities())
             {
-                _context.KhachHangs.Add(khachhang);
+                _context.LoaiXes.Add(loaixe);
                 _context.SaveChanges();
                 return true;
             }
         }
-        public static bool RemoveKhachHang(string MaKH)
+        public static bool RemoveLoaiXe(string TenLoai)
         {
             using (CNPMEntities _context = new CNPMEntities())
             {
-                var dbkh = (from kh in _context.KhachHangs
-                            where kh.MaKH == MaKH
-                            select kh).FirstOrDefault();
-                _context.KhachHangs.Remove(dbkh);
+                var dblx = (from lx in _context.LoaiXes
+                            where lx.TenLoai == TenLoai
+                            select lx).FirstOrDefault();
+                _context.LoaiXes.Remove(dblx);
                 _context.SaveChanges();
                 return true;
             }
         }
-
     }
 }

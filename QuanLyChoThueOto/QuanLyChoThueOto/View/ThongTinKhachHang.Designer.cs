@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyChoThueOto
 {
-    partial class KhachHang
+    partial class ThongTinKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@ namespace QuanLyChoThueOto
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinKhachHang));
             this.dgvKH = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btThem = new DevExpress.XtraEditors.SimpleButton();
-            this.btSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btXoa = new DevExpress.XtraEditors.SimpleButton();
-            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.clMaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clCMT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clGPLX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btThem = new DevExpress.XtraEditors.SimpleButton();
+            this.btSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
@@ -60,6 +60,9 @@ namespace QuanLyChoThueOto
             // 
             // dgvKH
             // 
+            this.dgvKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clMaKH,
@@ -70,69 +73,10 @@ namespace QuanLyChoThueOto
             this.clGPLX});
             this.dgvKH.Location = new System.Drawing.Point(260, 66);
             this.dgvKH.Name = "dgvKH";
+            this.dgvKH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKH.Size = new System.Drawing.Size(674, 296);
             this.dgvKH.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 16.25F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label10.Location = new System.Drawing.Point(49, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(141, 27);
-            this.label10.TabIndex = 106;
-            this.label10.Text = "Khách hàng";
-            // 
-            // btThem
-            // 
-            this.btThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btThem.Appearance.Options.UseFont = true;
-            this.btThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThem.ImageOptions.Image")));
-            this.btThem.Location = new System.Drawing.Point(258, 368);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(88, 37);
-            this.btThem.TabIndex = 108;
-            this.btThem.Text = "Thêm";
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // btSua
-            // 
-            this.btSua.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btSua.Appearance.Options.UseFont = true;
-            this.btSua.Enabled = false;
-            this.btSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSua.ImageOptions.Image")));
-            this.btSua.Location = new System.Drawing.Point(352, 368);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(88, 37);
-            this.btSua.TabIndex = 109;
-            this.btSua.Text = "Sửa";
-            // 
-            // btXoa
-            // 
-            this.btXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btXoa.Appearance.Options.UseFont = true;
-            this.btXoa.Enabled = false;
-            this.btXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.ImageOptions.Image")));
-            this.btXoa.Location = new System.Drawing.Point(446, 368);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(88, 37);
-            this.btXoa.TabIndex = 110;
-            this.btXoa.Text = "Xóa";
-            // 
-            // btThoat
-            // 
-            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btThoat.Appearance.Options.UseFont = true;
-            this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
-            this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btThoat.Location = new System.Drawing.Point(540, 368);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(88, 37);
-            this.btThoat.TabIndex = 111;
-            this.btThoat.Text = "Đóng";
-            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            this.dgvKH.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKH_CellMouseClick);
             // 
             // clMaKH
             // 
@@ -170,6 +114,74 @@ namespace QuanLyChoThueOto
             this.clGPLX.HeaderText = "GPLX";
             this.clGPLX.Name = "clGPLX";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 16.25F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label10.Location = new System.Drawing.Point(49, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(141, 27);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "Khách hàng";
+            // 
+            // btThem
+            // 
+            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btThem.Appearance.Options.UseFont = true;
+            this.btThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThem.ImageOptions.Image")));
+            this.btThem.Location = new System.Drawing.Point(258, 368);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(88, 37);
+            this.btThem.TabIndex = 108;
+            this.btThem.Text = "Thêm";
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // btSua
+            // 
+            this.btSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btSua.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btSua.Appearance.Options.UseFont = true;
+            this.btSua.Enabled = false;
+            this.btSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSua.ImageOptions.Image")));
+            this.btSua.Location = new System.Drawing.Point(352, 368);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(88, 37);
+            this.btSua.TabIndex = 109;
+            this.btSua.Text = "Sửa";
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btXoa.Appearance.Options.UseFont = true;
+            this.btXoa.Enabled = false;
+            this.btXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.ImageOptions.Image")));
+            this.btXoa.Location = new System.Drawing.Point(446, 368);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(88, 37);
+            this.btXoa.TabIndex = 110;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btThoat
+            // 
+            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btThoat.Appearance.Options.UseFont = true;
+            this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
+            this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btThoat.Location = new System.Drawing.Point(540, 368);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(88, 37);
+            this.btThoat.TabIndex = 111;
+            this.btThoat.Text = "Đóng";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
+            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Tahoma", 13.25F);
@@ -182,7 +194,7 @@ namespace QuanLyChoThueOto
             // txtTenKH
             // 
             this.txtTenKH.Font = new System.Drawing.Font("Tahoma", 13.25F);
-            this.txtTenKH.Location = new System.Drawing.Point(73, 139);
+            this.txtTenKH.Location = new System.Drawing.Point(73, 138);
             this.txtTenKH.Multiline = true;
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(181, 30);
@@ -308,12 +320,14 @@ namespace QuanLyChoThueOto
             this.label1.TabIndex = 90;
             this.label1.Text = "Thông tin khách hàng";
             // 
-            // KhachHang
+            // ThongTinKhachHang
             // 
+            this.AcceptButton = this.btThem;
             this.Appearance.BackColor = System.Drawing.Color.Cornsilk;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btThoat;
             this.ClientSize = new System.Drawing.Size(938, 408);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btSua);
@@ -334,7 +348,7 @@ namespace QuanLyChoThueOto
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvKH);
-            this.Name = "KhachHang";
+            this.Name = "ThongTinKhachHang";
             this.Text = "KhachHang";
             this.Load += new System.EventHandler(this.KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
