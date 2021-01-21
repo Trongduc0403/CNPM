@@ -32,9 +32,6 @@ namespace QuanLyChoThueOto
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinLoaiXe));
             this.label10 = new System.Windows.Forms.Label();
             this.dgvLX = new System.Windows.Forms.DataGridView();
-            this.clTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.txtSL = new System.Windows.Forms.TextBox();
             this.txtTenLoai = new System.Windows.Forms.TextBox();
@@ -46,6 +43,12 @@ namespace QuanLyChoThueOto
             this.btXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMaLoai = new System.Windows.Forms.TextBox();
+            this.clMaLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clTenLoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLX)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +70,7 @@ namespace QuanLyChoThueOto
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clMaLoai,
             this.clTenLoai,
             this.clSL,
             this.clMoTa});
@@ -77,28 +81,10 @@ namespace QuanLyChoThueOto
             this.dgvLX.TabIndex = 107;
             this.dgvLX.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLX_CellMouseClick);
             // 
-            // clTenLoai
-            // 
-            this.clTenLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clTenLoai.HeaderText = "Tên loại xe";
-            this.clTenLoai.Name = "clTenLoai";
-            // 
-            // clSL
-            // 
-            this.clSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clSL.HeaderText = "Số lượng";
-            this.clSL.Name = "clSL";
-            // 
-            // clMoTa
-            // 
-            this.clMoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clMoTa.HeaderText = "Mô tả";
-            this.clMoTa.Name = "clMoTa";
-            // 
             // txtMoTa
             // 
             this.txtMoTa.Font = new System.Drawing.Font("Tahoma", 13.25F);
-            this.txtMoTa.Location = new System.Drawing.Point(88, 156);
+            this.txtMoTa.Location = new System.Drawing.Point(88, 178);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(181, 30);
@@ -107,7 +93,7 @@ namespace QuanLyChoThueOto
             // txtSL
             // 
             this.txtSL.Font = new System.Drawing.Font("Tahoma", 13.25F);
-            this.txtSL.Location = new System.Drawing.Point(88, 119);
+            this.txtSL.Location = new System.Drawing.Point(88, 141);
             this.txtSL.Multiline = true;
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(181, 30);
@@ -116,7 +102,7 @@ namespace QuanLyChoThueOto
             // txtTenLoai
             // 
             this.txtTenLoai.Font = new System.Drawing.Font("Tahoma", 13.25F);
-            this.txtTenLoai.Location = new System.Drawing.Point(88, 84);
+            this.txtTenLoai.Location = new System.Drawing.Point(88, 106);
             this.txtTenLoai.Multiline = true;
             this.txtTenLoai.Name = "txtTenLoai";
             this.txtTenLoai.Size = new System.Drawing.Size(181, 30);
@@ -128,7 +114,7 @@ namespace QuanLyChoThueOto
             this.label2.BackColor = System.Drawing.Color.Cornsilk;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(8, 163);
+            this.label2.Location = new System.Drawing.Point(8, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 111;
@@ -140,7 +126,7 @@ namespace QuanLyChoThueOto
             this.labelTenKH.BackColor = System.Drawing.Color.Cornsilk;
             this.labelTenKH.Font = new System.Drawing.Font("Tahoma", 10F);
             this.labelTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelTenKH.Location = new System.Drawing.Point(8, 127);
+            this.labelTenKH.Location = new System.Drawing.Point(8, 149);
             this.labelTenKH.Name = "labelTenKH";
             this.labelTenKH.Size = new System.Drawing.Size(63, 17);
             this.labelTenKH.TabIndex = 112;
@@ -152,7 +138,7 @@ namespace QuanLyChoThueOto
             this.label4.BackColor = System.Drawing.Color.Cornsilk;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(8, 91);
+            this.label4.Location = new System.Drawing.Point(8, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 113;
@@ -227,12 +213,59 @@ namespace QuanLyChoThueOto
             this.label1.TabIndex = 113;
             this.label1.Text = "Thông tin các loại xe";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Cornsilk;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(8, 77);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.TabIndex = 113;
+            this.label3.Text = "Mã loại xe";
+            // 
+            // txtMaLoai
+            // 
+            this.txtMaLoai.Font = new System.Drawing.Font("Tahoma", 13.25F);
+            this.txtMaLoai.Location = new System.Drawing.Point(88, 70);
+            this.txtMaLoai.Multiline = true;
+            this.txtMaLoai.Name = "txtMaLoai";
+            this.txtMaLoai.Size = new System.Drawing.Size(181, 30);
+            this.txtMaLoai.TabIndex = 1;
+            // 
+            // clMaLoai
+            // 
+            this.clMaLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clMaLoai.HeaderText = "Mã loại xe";
+            this.clMaLoai.Name = "clMaLoai";
+            // 
+            // clTenLoai
+            // 
+            this.clTenLoai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clTenLoai.HeaderText = "Tên loại xe";
+            this.clTenLoai.Name = "clTenLoai";
+            // 
+            // clSL
+            // 
+            this.clSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clSL.HeaderText = "Số lượng";
+            this.clSL.Name = "clSL";
+            // 
+            // clMoTa
+            // 
+            this.clMoTa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clMoTa.HeaderText = "Mô tả";
+            this.clMoTa.Name = "clMoTa";
+            // 
             // ThongTinLoaiXe
             // 
+            this.AcceptButton = this.btThem;
             this.Appearance.BackColor = System.Drawing.Color.Cornsilk;
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btThoat;
             this.ClientSize = new System.Drawing.Size(880, 412);
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.btSua);
@@ -240,9 +273,11 @@ namespace QuanLyChoThueOto
             this.Controls.Add(this.btThoat);
             this.Controls.Add(this.txtMoTa);
             this.Controls.Add(this.txtSL);
+            this.Controls.Add(this.txtMaLoai);
             this.Controls.Add(this.txtTenLoai);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelTenKH);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvLX);
@@ -271,6 +306,9 @@ namespace QuanLyChoThueOto
         private DevExpress.XtraEditors.SimpleButton btXoa;
         private DevExpress.XtraEditors.SimpleButton btThoat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMaLoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clMaLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn clTenLoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSL;
         private System.Windows.Forms.DataGridViewTextBoxColumn clMoTa;

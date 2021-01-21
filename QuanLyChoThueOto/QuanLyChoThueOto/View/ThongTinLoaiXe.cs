@@ -27,9 +27,10 @@ namespace QuanLyChoThueOto
             foreach (var item in listLoaiXe)
             {
                 int index = dgvLX.Rows.Add();
-                dgvLX.Rows[index].Cells[0].Value = item.TenLoai;
-                dgvLX.Rows[index].Cells[1].Value = item.SoLuong;
-                dgvLX.Rows[index].Cells[2].Value = item.MoTa;
+                dgvLX.Rows[index].Cells[0].Value = item.MaLoai;
+                dgvLX.Rows[index].Cells[1].Value = item.TenLoai;
+                dgvLX.Rows[index].Cells[2].Value = item.SoLuong;
+                dgvLX.Rows[index].Cells[3].Value = item.MoTa;
             }
         }
         private void ThongTinLoaiXe_Load(object sender, EventArgs e)
@@ -47,14 +48,11 @@ namespace QuanLyChoThueOto
         private void btThem_Click(object sender, EventArgs e)
         {
             LoaiXe loaixe = new LoaiXe();
+            loaixe.MaLoai = txtMaLoai.Text;
             loaixe.TenLoai = txtTenLoai.Text;
             loaixe.SoLuong = int.Parse(txtSL.Text);
             loaixe.MoTa = txtMoTa.Text;
-            dgvLX.Rows.Add(1);
-            int index = dgvLX.Rows.Count - 1;
-            dgvLX.Rows[index - 1].Cells[0].Value = loaixe.TenLoai;
-            dgvLX.Rows[index - 1].Cells[1].Value = loaixe.SoLuong;
-            dgvLX.Rows[index - 1].Cells[2].Value = loaixe.MoTa;
+            
 
             if (LoaiXeController.AddLoaiXe(loaixe))
             {
@@ -62,6 +60,9 @@ namespace QuanLyChoThueOto
             }
             else
                 XtraMessageBox.Show("Thêm loại xe thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            CNPMEntities context = new CNPMEntities();
+            List<LoaiXe> listLoaiXe = context.LoaiXes.ToList();
+            BindGrid(listLoaiXe);
         }
 
         private void dgvLX_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -72,9 +73,10 @@ namespace QuanLyChoThueOto
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgvLX.Rows[e.RowIndex];
-                txtTenLoai.Text = row.Cells[0].Value.ToString();
-                txtSL.Text = row.Cells[1].Value.ToString();
-                txtMoTa.Text = row.Cells[2].Value.ToString();
+                txtMaLoai.Text = row.Cells[0].Value.ToString();
+                txtTenLoai.Text = row.Cells[1].Value.ToString();
+                txtSL.Text = row.Cells[2].Value.ToString();
+                txtMoTa.Text = row.Cells[3].Value.ToString();
 
             }
             GetTenLoai = txtTenLoai.Text.ToString();
@@ -87,6 +89,7 @@ namespace QuanLyChoThueOto
                 var dblx = (from lx in db.LoaiXes
                             where lx.TenLoai == GetTenLoai
                             select lx).FirstOrDefault();
+                dblx.MaLoai = txtMaLoai.Text;
                 dblx.TenLoai = txtTenLoai.Text;
                 dblx.SoLuong = int.Parse(txtSL.Text);
                 dblx.MoTa = txtMoTa.Text;

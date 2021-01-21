@@ -67,7 +67,7 @@ namespace QuanLyChoThueOto
 
         private void btBBGiaoNhan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            BBGN f = new BBGN();
+            ThongTinBBGN f = new ThongTinBBGN();
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -91,7 +91,9 @@ namespace QuanLyChoThueOto
         private void btKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ThongTinKhachHang f = new ThongTinKhachHang();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void btNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,6 +113,14 @@ namespace QuanLyChoThueOto
         private void btXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ThongTinXe f = new ThongTinXe();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            NguoiDung f = new NguoiDung();
             this.Hide();
             f.ShowDialog();
             this.Show();

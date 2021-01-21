@@ -36,13 +36,7 @@ namespace QuanLyChoThueOto
             nhanvien.sdtNV = txtSDT.Text;
             nhanvien.cmtNV = txtCMT.Text;
 
-            dgvNV.Rows.Add(1);
-            int index = dgvNV.Rows.Count - 1;
-            dgvNV.Rows[index - 1].Cells[0].Value = nhanvien.MaNV;
-            dgvNV.Rows[index - 1].Cells[1].Value = nhanvien.TenNV;
-            dgvNV.Rows[index - 1].Cells[2].Value = nhanvien.VaiTro;
-            dgvNV.Rows[index - 1].Cells[3].Value = nhanvien.sdtNV;
-            dgvNV.Rows[index - 1].Cells[4].Value = nhanvien.cmtNV;
+            
 
 
             if (NhanVienController.AddNhanVien(nhanvien))
@@ -51,6 +45,9 @@ namespace QuanLyChoThueOto
             }
             else
                 XtraMessageBox.Show("Thêm nhân viên thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            CNPMEntities context = new CNPMEntities();
+            List<NhanVien> listNhanVien = context.NhanViens.ToList();
+            BindGrid(listNhanVien);
         }
         private void BindGrid(List<NhanVien> listNhanVien)
         {

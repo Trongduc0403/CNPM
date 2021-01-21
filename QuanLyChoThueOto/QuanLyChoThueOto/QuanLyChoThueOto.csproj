@@ -40,6 +40,8 @@
     <Reference Include="DevExpress.ExpressApp.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Mvvm.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Persistent.Base.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -50,8 +52,10 @@
     <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPdfViewer.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -78,11 +82,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BBGNController.cs" />
     <Compile Include="Controller\LoaiXeController.cs" />
     <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\HopDongController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
+    <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\XeController.cs" />
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs">
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BBGN.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
@@ -116,11 +131,20 @@
     <Compile Include="Models\NhanVien.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ThanhToan.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Xe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NguoiDung.Designer.cs">
+      <DependentUpon>NguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThongTinXe.cs">
       <SubType>Form</SubType>
@@ -140,17 +164,11 @@
     <Compile Include="View\ThongTinNhanVien.Designer.cs">
       <DependentUpon>ThongTinNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\BBGN.cs">
+    <Compile Include="View\ThongTinBBGN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BBGN.Designer.cs">
-      <DependentUpon>BBGN.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChiTietBBGN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChiTietBBGN.Designer.cs">
-      <DependentUpon>ChiTietBBGN.cs</DependentUpon>
+    <Compile Include="View\ThongTinBBGN.Designer.cs">
+      <DependentUpon>ThongTinBBGN.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CapNhatThongTinKH.cs">
       <SubType>Form</SubType>
@@ -208,17 +226,20 @@
     <Compile Include="View\DangKyThueXe.Designer.cs">
       <DependentUpon>DangKyThueXe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NguoiDung.resx">
+      <DependentUpon>NguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ThongTinLoaiXe.resx">
       <DependentUpon>ThongTinLoaiXe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThongTinNhanVien.resx">
       <DependentUpon>ThongTinNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\BBGN.resx">
-      <DependentUpon>BBGN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ChiTietBBGN.resx">
-      <DependentUpon>ChiTietBBGN.cs</DependentUpon>
+    <EmbeddedResource Include="View\ThongTinBBGN.resx">
+      <DependentUpon>ThongTinBBGN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CapNhatThongTinKH.resx">
       <DependentUpon>CapNhatThongTinKH.cs</DependentUpon>

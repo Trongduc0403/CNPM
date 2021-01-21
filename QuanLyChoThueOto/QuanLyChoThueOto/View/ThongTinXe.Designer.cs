@@ -47,10 +47,6 @@ namespace QuanLyChoThueOto
             this.txtMoTaTT = new System.Windows.Forms.TextBox();
             this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.dgvXe = new System.Windows.Forms.DataGridView();
-            this.btThem = new DevExpress.XtraEditors.SimpleButton();
-            this.btSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btXoa = new DevExpress.XtraEditors.SimpleButton();
-            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.clBienSo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clLoaiXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTenXe = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +55,10 @@ namespace QuanLyChoThueOto
             this.clDonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clMoTaTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btThem = new DevExpress.XtraEditors.SimpleButton();
+            this.btSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.btThoat = new DevExpress.XtraEditors.SimpleButton();
             this.cbbLoaiXe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXe)).BeginInit();
             this.SuspendLayout();
@@ -255,61 +255,6 @@ namespace QuanLyChoThueOto
             this.dgvXe.TabIndex = 130;
             this.dgvXe.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvXe_CellMouseClick);
             // 
-            // btThem
-            // 
-            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btThem.Appearance.Options.UseFont = true;
-            this.btThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThem.ImageOptions.Image")));
-            this.btThem.Location = new System.Drawing.Point(321, 358);
-            this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(88, 37);
-            this.btThem.TabIndex = 131;
-            this.btThem.Text = "Thêm";
-            this.btThem.Click += new System.EventHandler(this.btThem_Click);
-            // 
-            // btSua
-            // 
-            this.btSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btSua.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btSua.Appearance.Options.UseFont = true;
-            this.btSua.Enabled = false;
-            this.btSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSua.ImageOptions.Image")));
-            this.btSua.Location = new System.Drawing.Point(415, 358);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(88, 37);
-            this.btSua.TabIndex = 132;
-            this.btSua.Text = "Sửa";
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
-            // 
-            // btXoa
-            // 
-            this.btXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btXoa.Appearance.Options.UseFont = true;
-            this.btXoa.Enabled = false;
-            this.btXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.ImageOptions.Image")));
-            this.btXoa.Location = new System.Drawing.Point(509, 358);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(88, 37);
-            this.btXoa.TabIndex = 133;
-            this.btXoa.Text = "Xóa";
-            // 
-            // btThoat
-            // 
-            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
-            this.btThoat.Appearance.Options.UseFont = true;
-            this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
-            this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btThoat.Location = new System.Drawing.Point(603, 358);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(88, 37);
-            this.btThoat.TabIndex = 134;
-            this.btThoat.Text = "Đóng";
-            // 
             // clBienSo
             // 
             this.clBienSo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -357,6 +302,62 @@ namespace QuanLyChoThueOto
             this.clTrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clTrangThai.HeaderText = "Trạng thái";
             this.clTrangThai.Name = "clTrangThai";
+            // 
+            // btThem
+            // 
+            this.btThem.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btThem.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btThem.Appearance.Options.UseFont = true;
+            this.btThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThem.ImageOptions.Image")));
+            this.btThem.Location = new System.Drawing.Point(321, 358);
+            this.btThem.Name = "btThem";
+            this.btThem.Size = new System.Drawing.Size(88, 37);
+            this.btThem.TabIndex = 131;
+            this.btThem.Text = "Thêm";
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
+            // 
+            // btSua
+            // 
+            this.btSua.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btSua.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btSua.Appearance.Options.UseFont = true;
+            this.btSua.Enabled = false;
+            this.btSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSua.ImageOptions.Image")));
+            this.btSua.Location = new System.Drawing.Point(415, 358);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(88, 37);
+            this.btSua.TabIndex = 132;
+            this.btSua.Text = "Sửa";
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btXoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btXoa.Appearance.Options.UseFont = true;
+            this.btXoa.Enabled = false;
+            this.btXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btXoa.ImageOptions.Image")));
+            this.btXoa.Location = new System.Drawing.Point(509, 358);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(88, 37);
+            this.btXoa.TabIndex = 133;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btThoat
+            // 
+            this.btThoat.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btThoat.Appearance.Font = new System.Drawing.Font("Tahoma", 10.25F);
+            this.btThoat.Appearance.Options.UseFont = true;
+            this.btThoat.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btThoat.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btThoat.ImageOptions.Image")));
+            this.btThoat.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btThoat.Location = new System.Drawing.Point(603, 358);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(88, 37);
+            this.btThoat.TabIndex = 134;
+            this.btThoat.Text = "Đóng";
             // 
             // cbbLoaiXe
             // 

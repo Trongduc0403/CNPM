@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyChoThueOto.Models;
+using QuanLyChoThueOto.Controller;
 
 namespace QuanLyChoThueOto
 {
@@ -22,13 +24,26 @@ namespace QuanLyChoThueOto
         {
 
         }
+        private int CheckAccount(Account account)
+        {
+            using (CNPMEntities db = new CNPMEntities())
+            {
+                var getaccount = (from ac in db.Accounts
+                                  select ac).ToList();
 
+                foreach (var a in getaccount)
+                {
+                    if (txtTaiKhoan.Text == a.TaiKhoan.Trim() && AccountController.SHA256(txtMatKhau.Text) == a.MatKhau.Trim())
+                        return 1;
+                }
+                return 0;
+            }
+        }
         private void btDangNhap_Click(object sender, EventArgs e)
         {
 
-            string user = "123";
-            string pass = "123";
-            if (user.Equals(txtTaiKhoan.Text) && pass.Equals(txtMatKhau.Text))
+            Account a = new Account();
+            if (CheckAccount(a) == 1)
             {
                 ManHinhChinh m = new ManHinhChinh();
                 this.Hide();
@@ -62,6 +77,12 @@ namespace QuanLyChoThueOto
         private void DangNhap_Load(object sender, EventArgs e)
         {
             skin();
+        }
+
+        private void btDangKy_Click(object sender, EventArgs e)
+        {
+            DangKy f = new DangKy();
+            f.Show();
         }
     }
 }

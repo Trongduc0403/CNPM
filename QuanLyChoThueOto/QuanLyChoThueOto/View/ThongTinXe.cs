@@ -118,7 +118,39 @@ namespace QuanLyChoThueOto
 
         private void btSua_Click(object sender, EventArgs e)
         {
+            using (CNPMEntities db = new CNPMEntities())
+            {
+                var xe = (from x in db.Xes
+                            where x.Biensoxe == GetBSX
+                            select x).FirstOrDefault();
+                xe.Biensoxe = txtBSX.Text;
+                xe.idLoaiXe = (int)cbbLoaiXe.SelectedValue;
+                xe.TenXe = txtTenXe.Text;
+                xe.PhiXang = txtPhiXang.Text;
+                xe.PhiQuaKm = txtPhiQuaKm.Text;
+                xe.DonGia = txtDonGia.Text;
+                xe.MoTaTT = txtMoTaTT.Text;
+                xe.TrangThai = int.Parse(txtTrangThai.Text);
+                db.SaveChanges();
+                MessageBox.Show("Edit success", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
+            GetBSX = null;
+            CNPMEntities context = new CNPMEntities();
+            List<Xe> xes = context.Xes.ToList();
+            BindGrid(xes);
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (XeController.RemoveXe(GetBSX))
+                MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Vui lòng chọn khách hàng để xóa");
+
+            CNPMEntities context = new CNPMEntities();
+            List<Xe> xes = context.Xes.ToList();
+            BindGrid(xes);
         }
     }
 }

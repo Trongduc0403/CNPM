@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="MatKhau" Type="nchar" MaxLength="100" Nullable="false" />
+  </EntityType>
   <EntityType Name="BBGN">
     <Key>
       <PropertyRef Name="idBBGN" />
@@ -8,10 +15,12 @@
     <Property Name="idXe" Type="int" />
     <Property Name="idKH" Type="int" />
     <Property Name="idNV" Type="int" />
+    <Property Name="MaBBGN" Type="nchar" MaxLength="10" />
     <Property Name="NgayGiao" Type="datetime" />
     <Property Name="KmDi" Type="int" />
     <Property Name="XangDi" Type="char" MaxLength="20" />
     <Property Name="TrangThaiDi" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayNhan" Type="datetime" />
     <Property Name="KmVe" Type="int" />
     <Property Name="XangVe" Type="char" MaxLength="20" />
     <Property Name="TrangThaiVe" Type="nvarchar" MaxLength="100" />
@@ -24,6 +33,7 @@
     <Property Name="idXe" Type="int" Nullable="false" />
     <Property Name="idKH" Type="int" Nullable="false" />
     <Property Name="idNV" Type="int" Nullable="false" />
+    <Property Name="MaBBSC" Type="nchar" MaxLength="10" />
     <Property Name="TenSC" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayBBSC" Type="datetime" />
     <Property Name="NoiDungSC" Type="nvarchar" MaxLength="100" />
@@ -61,6 +71,7 @@
       <PropertyRef Name="idLoaiXe" />
     </Key>
     <Property Name="idLoaiXe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaLoai" Type="nchar" MaxLength="10" />
     <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
     <Property Name="SoLuong" Type="int" />
     <Property Name="MoTa" Type="nvarchar" MaxLength="50" />
@@ -75,6 +86,16 @@
     <Property Name="VaiTro" Type="nvarchar" MaxLength="50" />
     <Property Name="cmtNV" Type="char" MaxLength="11" />
     <Property Name="sdtNV" Type="char" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="ThanhToan">
     <Key>
@@ -247,12 +268,14 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="CNPMModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BBGN" EntityType="Self.BBGN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BBSC" EntityType="Self.BBSC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HopDong" EntityType="Self.HopDong" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LoaiXe" EntityType="Self.LoaiXe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThanhToan" EntityType="Self.ThanhToan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Xe" EntityType="Self.Xe" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_BBGN_Xe" Association="Self.FK_BBGN_Xe">

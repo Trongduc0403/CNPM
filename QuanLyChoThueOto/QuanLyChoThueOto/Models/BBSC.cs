@@ -18,6 +18,7 @@ namespace QuanLyChoThueOto.Models
         public int idXe { get; set; }
         public int idKH { get; set; }
         public int idNV { get; set; }
+        public string MaBBSC { get; set; }
         public string TenSC { get; set; }
         public Nullable<System.DateTime> NgayBBSC { get; set; }
         public string NoiDungSC { get; set; }

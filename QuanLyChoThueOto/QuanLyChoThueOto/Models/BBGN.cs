@@ -18,10 +18,12 @@ namespace QuanLyChoThueOto.Models
         public Nullable<int> idXe { get; set; }
         public Nullable<int> idKH { get; set; }
         public Nullable<int> idNV { get; set; }
+        public string MaBBGN { get; set; }
         public Nullable<System.DateTime> NgayGiao { get; set; }
         public Nullable<int> KmDi { get; set; }
         public string XangDi { get; set; }
         public string TrangThaiDi { get; set; }
+        public Nullable<System.DateTime> NgayNhan { get; set; }
         public Nullable<int> KmVe { get; set; }
         public string XangVe { get; set; }
         public string TrangThaiVe { get; set; }

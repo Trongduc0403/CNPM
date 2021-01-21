@@ -91,9 +91,7 @@ namespace QuanLyChoThueOto
                 txtGPLX.Text = row.Cells[5].Value.ToString();
             }
             GetMaKH = txtMaKH.Text.ToString();
-            CNPMEntities context = new CNPMEntities();
-            List<KhachHang> listKhachHang = context.KhachHangs.ToList();
-            BindGrid(listKhachHang);
+            
         }
 
         private void btSua_Click(object sender, EventArgs e)
@@ -112,7 +110,12 @@ namespace QuanLyChoThueOto
                 db.SaveChanges();
                 MessageBox.Show("Edit success", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
             GetMaKH = null;
+
+            CNPMEntities context = new CNPMEntities();
+            List<KhachHang> listKhachHang = context.KhachHangs.ToList();
+            BindGrid(listKhachHang);
         }
 
         private void btXoa_Click(object sender, EventArgs e)

@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyChoThueOto.Controller;
 using QuanLyChoThueOto.Models;
-using System.Windows.Forms;
 
 
 namespace QuanLyChoThueOto
@@ -40,23 +39,23 @@ namespace QuanLyChoThueOto
         //    //    dgvHD.Rows[index].Cells[8].Value = item.GiayToGiuLai;
         //    //}
         //}
-        private void FillMaKHCombobox(List<KhachHang> listKhachHang)
-        {
-            this.cbbMaKH.DataSource = listKhachHang;
-            this.cbbMaKH.DisplayMember = "MaKH";
-        }
+        //private void FillMaKHCombobox(List<KhachHang> listKhachHang)
+        //{
+        //    this.cbbMaKH.DataSource = listKhachHang;
+        //    this.cbbMaKH.DisplayMember = "MaKH";
+        //}
 
-        private void FillMaNVCombobox(List<NhanVien> listNHANVIENs)
-        {
-            this.cbbMaNV.DataSource = listNHANVIENs;
-            this.cbbMaNV.DisplayMember = "MaNV";
-        }
+        //private void FillMaNVCombobox(List<NhanVien> listNHANVIENs)
+        //{
+        //    this.cbbMaNV.DataSource = listNHANVIENs;
+        //    this.cbbMaNV.DisplayMember = "MaNV";
+        //}
 
-        private void FillSoXeCombobox(List<Xe> listXE)
-        {
-            this.cbbSoXe.DataSource = listXE;
-            this.cbbSoXe.DisplayMember = "SoXe";
-        }
+        //private void FillSoXeCombobox(List<Xe> listXE)
+        //{
+        //    this.cbbSoXe.DataSource = listXE;
+        //    this.cbbSoXe.DisplayMember = "SoXe";
+        //}
 
         private void BindGrid(List<HopDong> lstHopDong)
         {
@@ -75,6 +74,7 @@ namespace QuanLyChoThueOto
                     var xe = (from hd in db.HopDongs
                               join x in db.Xes on hd.idXe equals x.idXe
                               select x).ToList();
+
                     int index = dgvHD.Rows.Add();
                    
                     dgvHD.Rows[index].Cells[0].Value = item.MaHD;
@@ -97,11 +97,11 @@ namespace QuanLyChoThueOto
             using (CNPMEntities db = new CNPMEntities())
             {
                 var getnv = (from nv in db.NhanViens
-                            select nv).ToList();
+                             select nv).ToList();
                 var getkh = (from kh in db.KhachHangs
-                            select kh).ToList();
+                             select kh).ToList();
                 var xe = (from x in db.Xes
-                            select x).ToList();
+                          select x).ToList();
                 this.cbbMaNV.DataSource = getnv;
                 this.cbbMaNV.ValueMember = "idNV";
                 this.cbbMaNV.DisplayMember = "MaNV";
@@ -114,12 +114,12 @@ namespace QuanLyChoThueOto
                 this.cbbSoXe.ValueMember = "idXe";
                 this.cbbSoXe.DisplayMember = "Biensoxe";
 
-
+            }
                 CNPMEntities context = new CNPMEntities();
                 List<HopDong> lstHopDong = context.HopDongs.ToList();
                 BindGrid(lstHopDong);
 
-            }
+            
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -140,6 +140,10 @@ namespace QuanLyChoThueOto
             }
             else
                 XtraMessageBox.Show("Nhập không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            CNPMEntities context = new CNPMEntities();
+            List<HopDong> lstHopDong = context.HopDongs.ToList();
+            BindGrid(lstHopDong);
         }
         private void btThoat_Click(object sender, EventArgs e)
         {
@@ -174,9 +178,13 @@ namespace QuanLyChoThueOto
         private void btXoa_Click(object sender, EventArgs e)
         {
             if (HopDongController.RemoveHopDong(GetMaHD))
-                MessageBox.Show("Deleted");
+                MessageBox.Show("Đã xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("vui long chon hang de xoa");
+
+            CNPMEntities context = new CNPMEntities();
+            List<HopDong> lstHopDong = context.HopDongs.ToList();
+            BindGrid(lstHopDong);
         }
 
         private void dgvHD_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

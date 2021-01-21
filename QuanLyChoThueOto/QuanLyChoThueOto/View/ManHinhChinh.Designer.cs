@@ -76,14 +76,13 @@ namespace QuanLyChoThueOto
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.tabHien = new DevExpress.XtraTab.XtraTabControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             btKhachHang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabHien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -164,6 +163,7 @@ namespace QuanLyChoThueOto
             this.btNguoiDung.Name = "btNguoiDung";
             this.btNguoiDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNguoiDung_ItemClick);
             // 
             // btDoiMatKhau
             // 
@@ -475,14 +475,6 @@ namespace QuanLyChoThueOto
             // 
             this.ribbonPage6.Name = "ribbonPage6";
             // 
-            // tabHien
-            // 
-            this.tabHien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabHien.Location = new System.Drawing.Point(0, 150);
-            this.tabHien.Name = "tabHien";
-            this.tabHien.Size = new System.Drawing.Size(994, 444);
-            this.tabHien.TabIndex = 2;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -501,6 +493,15 @@ namespace QuanLyChoThueOto
             this.dataGridView2.Size = new System.Drawing.Size(665, 432);
             this.dataGridView2.TabIndex = 0;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 150);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(994, 444);
+            this.tabControl1.TabIndex = 5;
+            // 
             // ManHinhChinh
             // 
             this.Appearance.BackColor = System.Drawing.Color.Honeydew;
@@ -508,7 +509,7 @@ namespace QuanLyChoThueOto
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 621);
-            this.Controls.Add(this.tabHien);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "ManHinhChinh";
@@ -519,7 +520,6 @@ namespace QuanLyChoThueOto
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoExEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabHien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -569,11 +569,11 @@ namespace QuanLyChoThueOto
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
         private DevExpress.XtraBars.BarButtonItem btXeRanh;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        private DevExpress.XtraTab.XtraTabControl tabHien;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
         private DevExpress.Utils.WorkspaceManager workspaceManager1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

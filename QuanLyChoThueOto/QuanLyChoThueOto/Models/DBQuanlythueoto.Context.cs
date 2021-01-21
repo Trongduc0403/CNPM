@@ -25,12 +25,14 @@ namespace QuanLyChoThueOto.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<BBGN> BBGNs { get; set; }
         public virtual DbSet<BBSC> BBSCs { get; set; }
         public virtual DbSet<HopDong> HopDongs { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<LoaiXe> LoaiXes { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<ThanhToan> ThanhToans { get; set; }
         public virtual DbSet<Xe> Xes { get; set; }
     }

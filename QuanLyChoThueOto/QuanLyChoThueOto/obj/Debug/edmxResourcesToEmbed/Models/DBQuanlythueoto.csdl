@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CNPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="TaiKhoan" />
+    </Key>
+    <Property Name="TaiKhoan" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
   <EntityType Name="BBGN">
     <Key>
       <PropertyRef Name="idBBGN" />
@@ -8,10 +15,12 @@
     <Property Name="idXe" Type="Int32" />
     <Property Name="idKH" Type="Int32" />
     <Property Name="idNV" Type="Int32" />
+    <Property Name="MaBBGN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="NgayGiao" Type="DateTime" Precision="3" />
     <Property Name="KmDi" Type="Int32" />
     <Property Name="XangDi" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
     <Property Name="TrangThaiDi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgayNhan" Type="DateTime" Precision="3" />
     <Property Name="KmVe" Type="Int32" />
     <Property Name="XangVe" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
     <Property Name="TrangThaiVe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -27,6 +36,7 @@
     <Property Name="idXe" Type="Int32" Nullable="false" />
     <Property Name="idKH" Type="Int32" Nullable="false" />
     <Property Name="idNV" Type="Int32" Nullable="false" />
+    <Property Name="MaBBSC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="TenSC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NgayBBSC" Type="DateTime" Precision="3" />
     <Property Name="NoiDungSC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -74,6 +84,7 @@
       <PropertyRef Name="idLoaiXe" />
     </Key>
     <Property Name="idLoaiXe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaLoai" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
     <Property Name="MoTa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -93,6 +104,16 @@
     <NavigationProperty Name="BBSCs" Relationship="Self.FK_BBSC_NhanVien" FromRole="NhanVien" ToRole="BBSC" />
     <NavigationProperty Name="HopDongs" Relationship="Self.FK_Table_5_Table_2" FromRole="NhanVien" ToRole="HopDong" />
     <NavigationProperty Name="ThanhToans" Relationship="Self.FK_ThanhToan_NhanVien" FromRole="NhanVien" ToRole="ThanhToan" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="ThanhToan">
     <Key>
@@ -271,12 +292,14 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="CNPMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
     <EntitySet Name="BBGNs" EntityType="Self.BBGN" />
     <EntitySet Name="BBSCs" EntityType="Self.BBSC" />
     <EntitySet Name="HopDongs" EntityType="Self.HopDong" />
     <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
     <EntitySet Name="LoaiXes" EntityType="Self.LoaiXe" />
     <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="ThanhToans" EntityType="Self.ThanhToan" />
     <EntitySet Name="Xes" EntityType="Self.Xe" />
     <AssociationSet Name="FK_BBGN_Xe" Association="Self.FK_BBGN_Xe">

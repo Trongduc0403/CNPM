@@ -21,6 +21,7 @@ namespace QuanLyChoThueOto.Models
         }
     
         public int idLoaiXe { get; set; }
+        public string MaLoai { get; set; }
         public string TenLoai { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public string MoTa { get; set; }
