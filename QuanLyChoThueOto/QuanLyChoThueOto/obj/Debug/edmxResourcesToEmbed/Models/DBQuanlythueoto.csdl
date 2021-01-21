@@ -32,7 +32,7 @@
     <Key>
       <PropertyRef Name="id_BBSC" />
     </Key>
-    <Property Name="id_BBSC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_BBSC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="idXe" Type="Int32" Nullable="false" />
     <Property Name="idKH" Type="Int32" Nullable="false" />
     <Property Name="idNV" Type="Int32" Nullable="false" />
