@@ -332,3 +332,4 @@ C:\Users\Trong\OneDrive\Máy tính\CNPM\QuanLyChoThueOto\QuanLyChoThueOto\bin\De
 C:\Users\Trong\OneDrive\Máy tính\CNPM\QuanLyChoThueOto\QuanLyChoThueOto\bin\Debug\ru\DevExpress.XtraPdfViewer.v20.1.resources.dll
 C:\Users\Trong\OneDrive\Máy tính\CNPM\QuanLyChoThueOto\QuanLyChoThueOto\obj\Debug\QuanLyChoThueOto.DangKy.resources
 C:\Users\Trong\OneDrive\Máy tính\CNPM\QuanLyChoThueOto\QuanLyChoThueOto\obj\Debug\QuanLyChoThueOto.NguoiDung.resources
+C:\Users\Trong\OneDrive\Máy tính\CNPM\QuanLyChoThueOto\QuanLyChoThueOto\obj\Debug\QuanLyChoThueOto.DoiMatKhau.resources

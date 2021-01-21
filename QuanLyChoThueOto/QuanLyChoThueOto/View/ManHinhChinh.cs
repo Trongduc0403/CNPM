@@ -125,5 +125,21 @@ namespace QuanLyChoThueOto
             f.ShowDialog();
             this.Show();
         }
+
+        private void btSuCo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DanhSachSuCocs f = new DanhSachSuCocs();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DoiMatKhau f = new DoiMatKhau();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

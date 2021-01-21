@@ -125,25 +125,36 @@ namespace QuanLyChoThueOto
         private void btThem_Click(object sender, EventArgs e)
         {
             HopDong hopdong = new HopDong();
-            hopdong.MaHD = txtSoDH.Text;
-            hopdong.idXe = (int)cbbSoXe.SelectedValue;
-            hopdong.idNV = (int)cbbMaNV.SelectedValue;
-            hopdong.idKH = (int)cbbMaKH.SelectedValue;
-            hopdong.NgayHD = DateTime.Parse(msktbNgayHD.Text.ToString());
-            hopdong.TienDat = txtTienDat.Text;
-            hopdong.KhuyenMai = txtKhuyenMai.Text;
-            hopdong.NoiDungHD = txtNoiDungHD.Text;
-            hopdong.GiayToGiuLai = txtGiayTo.Text;
-            if (HopDongController.AddHopDong(hopdong))
+            try
             {
-                XtraMessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                XtraMessageBox.Show("Nhập không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            CNPMEntities context = new CNPMEntities();
-            List<HopDong> lstHopDong = context.HopDongs.ToList();
-            BindGrid(lstHopDong);
+                hopdong.MaHD = txtSoDH.Text;
+                hopdong.idXe = (int)cbbSoXe.SelectedValue;
+                hopdong.idNV = (int)cbbMaNV.SelectedValue;
+                hopdong.idKH = (int)cbbMaKH.SelectedValue;
+                hopdong.NgayHD = DateTime.Parse(msktbNgayHD.Text.ToString());
+                hopdong.TienDat = txtTienDat.Text;
+                hopdong.KhuyenMai = txtKhuyenMai.Text;
+                hopdong.NoiDungHD = txtNoiDungHD.Text;
+                hopdong.GiayToGiuLai = txtGiayTo.Text;
+                if (HopDongController.AddHopDong(hopdong))
+                {
+                    XtraMessageBox.Show("Nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    XtraMessageBox.Show("Nhập không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CNPMEntities context = new CNPMEntities();
+                List<HopDong> lstHopDong = context.HopDongs.ToList();
+                BindGrid(lstHopDong);
+            }
+            catch
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại thông tin cần nhập", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+            
+            
         }
         private void btThoat_Click(object sender, EventArgs e)
         {

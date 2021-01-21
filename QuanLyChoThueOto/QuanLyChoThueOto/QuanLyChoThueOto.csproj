@@ -83,16 +83,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BBGNController.cs" />
+    <Compile Include="Controller\BBSCController.cs" />
     <Compile Include="Controller\LoaiXeController.cs" />
     <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\HopDongController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\XeController.cs" />
-    <Compile Include="DangKy.cs">
+    <Compile Include="View\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKy.Designer.cs">
+    <Compile Include="View\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DangKy.Designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs">
@@ -140,10 +147,10 @@
     <Compile Include="Models\Xe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-    <Compile Include="NguoiDung.cs">
+    <Compile Include="View\NguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NguoiDung.Designer.cs">
+    <Compile Include="View\NguoiDung.Designer.cs">
       <DependentUpon>NguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThongTinXe.cs">
@@ -226,10 +233,13 @@
     <Compile Include="View\DangKyThueXe.Designer.cs">
       <DependentUpon>DangKyThueXe.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangKy.resx">
+    <EmbeddedResource Include="View\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguoiDung.resx">
+    <EmbeddedResource Include="View\NguoiDung.resx">
       <DependentUpon>NguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThongTinLoaiXe.resx">

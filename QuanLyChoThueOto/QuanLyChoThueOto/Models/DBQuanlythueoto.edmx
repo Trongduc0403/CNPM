@@ -34,7 +34,7 @@
           <Key>
             <PropertyRef Name="id_BBSC" />
           </Key>
-          <Property Name="id_BBSC" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="id_BBSC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idXe" Type="int" Nullable="false" />
           <Property Name="idKH" Type="int" Nullable="false" />
           <Property Name="idNV" Type="int" Nullable="false" />
@@ -369,7 +369,7 @@
           <Key>
             <PropertyRef Name="id_BBSC" />
           </Key>
-          <Property Name="id_BBSC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="id_BBSC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idXe" Type="Int32" Nullable="false" />
           <Property Name="idKH" Type="Int32" Nullable="false" />
           <Property Name="idNV" Type="Int32" Nullable="false" />
