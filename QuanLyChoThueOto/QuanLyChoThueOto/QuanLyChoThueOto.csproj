@@ -62,6 +62,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Compression.Base, Version=18.4460.0.35, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Compression.Base.18.4.0.35\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.4460.0.35, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.18.4.0.35\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Pdf.Base, Version=18.4460.0.35, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Pdf.WinForms.18.4.0.35\lib\net46\Syncfusion.Pdf.Base.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -90,6 +99,7 @@
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\XeController.cs" />
+<<<<<<< HEAD
     <Compile Include="View\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +112,8 @@
     <Compile Include="View\DangKy.Designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> cc2f0bd2a99b7ada8ab689a2c146a6180ccf2974
     <Compile Include="Models\Account.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
@@ -138,6 +150,12 @@
     <Compile Include="Models\NhanVien.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
@@ -147,6 +165,15 @@
     <Compile Include="Models\Xe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="View\DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+>>>>>>> cc2f0bd2a99b7ada8ab689a2c146a6180ccf2974
     <Compile Include="View\NguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,9 +260,12 @@
     <Compile Include="View\DangKyThueXe.Designer.cs">
       <DependentUpon>DangKyThueXe.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="View\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> cc2f0bd2a99b7ada8ab689a2c146a6180ccf2974
     <EmbeddedResource Include="View\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
