@@ -92,28 +92,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\BBGNController.cs" />
-    <Compile Include="Controller\BBSCController.cs" />
     <Compile Include="Controller\LoaiXeController.cs" />
     <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\HopDongController.cs" />
     <Compile Include="Controller\NhanVienController.cs" />
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\XeController.cs" />
-<<<<<<< HEAD
-    <Compile Include="View\DoiMatKhau.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DoiMatKhau.Designer.cs">
-      <DependentUpon>DoiMatKhau.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\DangKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\DangKy.Designer.cs">
-      <DependentUpon>DangKy.cs</DependentUpon>
-    </Compile>
-=======
->>>>>>> cc2f0bd2a99b7ada8ab689a2c146a6180ccf2974
     <Compile Include="Models\Account.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
@@ -165,15 +149,12 @@
     <Compile Include="Models\Xe.cs">
       <DependentUpon>DBQuanlythueoto.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="View\DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\DangKy.Designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
->>>>>>> cc2f0bd2a99b7ada8ab689a2c146a6180ccf2974
     <Compile Include="View\NguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,12 +241,6 @@
     <Compile Include="View\DangKyThueXe.Designer.cs">
       <DependentUpon>DangKyThueXe.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <EmbeddedResource Include="View\DoiMatKhau.resx">
-      <DependentUpon>DoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-=======
->>>>>>> cc2f0bd2a99b7ada8ab689a2c146a6180ccf2974
     <EmbeddedResource Include="View\DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>

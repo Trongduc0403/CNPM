@@ -45,6 +45,7 @@ namespace QuanLyChoThueOto
             this.btNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btLoaiXe = new DevExpress.XtraBars.BarButtonItem();
             this.btXe = new DevExpress.XtraBars.BarButtonItem();
+            this.btBaoCaoSuCo = new DevExpress.XtraBars.BarButtonItem();
             this.btHopDongTheoNgay = new DevExpress.XtraBars.BarButtonItem();
             this.btSuCoTheoNgay = new DevExpress.XtraBars.BarButtonItem();
             this.btLuotThue = new DevExpress.XtraBars.BarButtonItem();
@@ -114,6 +115,7 @@ namespace QuanLyChoThueOto
             this.btNhanVien,
             this.btLoaiXe,
             this.btXe,
+            this.btBaoCaoSuCo,
             btKhachHang,
             this.btHopDongTheoNgay,
             this.btSuCoTheoNgay,
@@ -171,7 +173,6 @@ namespace QuanLyChoThueOto
             this.btDoiMatKhau.Name = "btDoiMatKhau";
             this.btDoiMatKhau.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDoiMatKhau_ItemClick);
             // 
             // btSaoLuu
             // 
@@ -213,7 +214,6 @@ namespace QuanLyChoThueOto
             this.btSuCo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btSuCo.ImageOptions.Image")));
             this.btSuCo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btSuCo.ImageOptions.LargeImage")));
             this.btSuCo.Name = "btSuCo";
-            this.btSuCo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSuCo_ItemClick);
             // 
             // btNhanVien
             // 
@@ -242,6 +242,14 @@ namespace QuanLyChoThueOto
             this.btXe.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btXe.ImageOptions.LargeImage")));
             this.btXe.Name = "btXe";
             this.btXe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btXe_ItemClick);
+            // 
+            // btBaoCaoSuCo
+            // 
+            this.btBaoCaoSuCo.Caption = "Sự cố";
+            this.btBaoCaoSuCo.Id = 14;
+            this.btBaoCaoSuCo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btBaoCaoSuCo.ImageOptions.Image")));
+            this.btBaoCaoSuCo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btBaoCaoSuCo.ImageOptions.LargeImage")));
+            this.btBaoCaoSuCo.Name = "btBaoCaoSuCo";
             // 
             // btHopDongTheoNgay
             // 
@@ -421,6 +429,7 @@ namespace QuanLyChoThueOto
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btLoaiXe);
             this.ribbonPageGroup7.ItemLinks.Add(this.btXe);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btBaoCaoSuCo);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Danh mục xe";
             // 
@@ -541,6 +550,7 @@ namespace QuanLyChoThueOto
         private DevExpress.XtraBars.BarButtonItem btNhanVien;
         private DevExpress.XtraBars.BarButtonItem btLoaiXe;
         private DevExpress.XtraBars.BarButtonItem btXe;
+        private DevExpress.XtraBars.BarButtonItem btBaoCaoSuCo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem btHopDongTheoNgay;
         private DevExpress.XtraBars.BarButtonItem btSuCoTheoNgay;
